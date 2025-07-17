@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,6 +28,8 @@ import ChatWidget from "@/components/ChatWidget";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import RealResultsSection from "@/components/RealResultsSection";
+import { Footer7 } from "@/components/ui/footer-7";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -209,8 +212,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105">
-              <CardHeader className="text-center pb-4">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
+              <CardHeader className="text-center pb-4 flex-1">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Zap className="w-10 h-10 text-primary" />
                 </div>
@@ -221,8 +224,8 @@ const Index = () => {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-primary/20 bg-primary/5 rounded-3xl overflow-hidden hover:scale-105">
-              <CardHeader className="text-center pb-4">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-primary/20 bg-primary/5 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
+              <CardHeader className="text-center pb-4 flex-1">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-10 h-10 text-primary" />
                 </div>
@@ -233,8 +236,8 @@ const Index = () => {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105">
-              <CardHeader className="text-center pb-4">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
+              <CardHeader className="text-center pb-4 flex-1">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <CheckCircle className="w-10 h-10 text-primary" />
                 </div>
@@ -535,19 +538,55 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="mb-8">
-              <h4 className="text-2xl font-ibrand">Accreditry</h4>
-              <p className="text-lg text-background/70 mt-2">Genuine Voices, Proven Impact</p>
-            </div>
-            <p className="text-background/70">
-              © 2024 Accreditry. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer7 
+        logo={{
+          url: "#",
+          src: "/lovable-uploads/2db7cc7f-858b-4801-95bb-9ed9f927848d.png",
+          alt: "Accreditry Logo",
+          title: "Accreditry"
+        }}
+        sections={[
+          {
+            title: "Services",
+            links: [
+              { name: "Review Management", href: "#services" },
+              { name: "Analytics", href: "#analytics" },
+              { name: "Pricing", href: "#pricing" },
+              { name: "Free Trial", href: "#free-trial" }
+            ]
+          },
+          {
+            title: "Company",
+            links: [
+              { name: "About Us", href: "#" },
+              { name: "How It Works", href: "#services" },
+              { name: "Success Stories", href: "#" },
+              { name: "Contact", href: "#" }
+            ]
+          },
+          {
+            title: "Support",
+            links: [
+              { name: "Help Center", href: "#" },
+              { name: "FAQ", href: "#faq" },
+              { name: "Contact Support", href: "#" },
+              { name: "Live Chat", href: "#" }
+            ]
+          }
+        ]}
+        description="Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results."
+        socialLinks={[
+          { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
+          { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
+          { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
+          { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" }
+        ]}
+        copyright="© 2025 Accreditry. All rights reserved. Executed by Webtic Studio"
+        legalLinks={[
+          { name: "Terms of Service", href: "#" },
+          { name: "Privacy Policy", href: "#" }
+        ]}
+      />
 
       {/* Chat Widget */}
       <ChatWidget />

@@ -100,4 +100,13 @@ All colors MUST be HSL.
   .gradient-muted {
     background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted) / 0.5) 100%);
   }
+
+  /* Webtic Studio gradient */
+  .webtic-gradient {
+    background: linear-gradient(135deg, #C300FF 0%, #FF00BF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
 }
