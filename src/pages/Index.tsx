@@ -51,7 +51,12 @@ const Index = () => {
 
   const scrollToTrial = () => {
     const trialElement = document.getElementById('free-trial');
-    trialElement?.scrollIntoView({ behavior: 'smooth' });
+    trialElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const toggleFaq = (index: number) => {
@@ -147,13 +152,28 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" 
                 alt="Accreditry Logo"
-                className="h-12 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium">How it works</a>
-              <a href="#pricing" className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium">Pricing</a>
-              <a href="#faq" className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium">FAQ</a>
+              <button 
+                onClick={() => scrollToSection('services')} 
+                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
+              >
+                How it works
+              </button>
+              <button 
+                onClick={() => scrollToSection('pricing')} 
+                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
+              >
+                Pricing
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')} 
+                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
+              >
+                FAQ
+              </button>
             </nav>
             <Button 
               onClick={scrollToTrial}
@@ -196,6 +216,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
+                  onClick={() => scrollToSection('testimonials')}
                   className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 py-4 text-lg font-medium"
                 >
                   View Success Stories
