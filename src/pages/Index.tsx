@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,7 +20,8 @@ import {
   Clock,
   Mail,
   Building,
-  Link
+  Link,
+  Crown
 } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import ChatWidget from "@/components/ChatWidget";
@@ -30,6 +30,7 @@ import PricingSection from "@/components/PricingSection";
 import RealResultsSection from "@/components/RealResultsSection";
 import { Footer7 } from "@/components/ui/footer-7";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Pricing } from "@/components/ui/pricing";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -77,6 +78,62 @@ const Index = () => {
     {
       question: "Do you offer warranty?",
       answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
+    }
+  ];
+
+  const pricingPlans = [
+    {
+      name: "Starter",
+      icon: Star,
+      price: "$299",
+      period: "/month",
+      description: "Perfect for small businesses getting started",
+      reviews: "5-8 reviews per month",
+      features: [
+        "5-8 authentic reviews monthly",
+        "Real local reviewers",
+        "Basic analytics dashboard",
+        "Email support",
+        "30-day review warranty"
+      ],
+      isPopular: false
+    },
+    {
+      name: "Professional", 
+      icon: Zap,
+      price: "$599",
+      period: "/month",
+      description: "Most popular for growing businesses",
+      reviews: "12-15 reviews per month",
+      features: [
+        "12-15 authentic reviews monthly",
+        "Priority reviewer selection",
+        "Advanced analytics & reporting",
+        "Phone + email support",
+        "60-day review warranty",
+        "Custom review scheduling",
+        "Competitor analysis"
+      ],
+      isPopular: true
+    },
+    {
+      name: "Enterprise",
+      icon: Crown,
+      price: "Custom",
+      period: "pricing",
+      description: "For established businesses with high volume needs",
+      reviews: "20+ reviews per month",
+      features: [
+        "20+ authentic reviews monthly",
+        "Dedicated account manager",
+        "White-label reporting",
+        "24/7 priority support",
+        "90-day review warranty",
+        "Multi-location support",
+        "API access",
+        "Custom integrations"
+      ],
+      isPopular: false
     }
   ];
 
@@ -255,7 +312,10 @@ const Index = () => {
       <RealResultsSection />
 
       {/* Pricing Section */}
-      <PricingSection />
+      <Pricing 
+        plans={pricingPlans}
+        onCardClick={scrollToTrial}
+      />
 
       {/* Analytics Section - Image Left, Text Right */}
       <section className="py-20 bg-muted/30">
