@@ -88,7 +88,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src="/lovable-uploads/2db7cc7f-858b-4801-95bb-9ed9f927848d.png" 
+                src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" 
                 alt="Accreditry Logo"
                 className="h-12 w-auto"
               />
@@ -541,9 +541,9 @@ const Index = () => {
       <Footer7 
         logo={{
           url: "#",
-          src: "/lovable-uploads/2db7cc7f-858b-4801-95bb-9ed9f927848d.png",
+          src: "/lovable-uploads/6af8b769-c93d-41dc-b4c2-3f074d0db8bf.png",
           alt: "Accreditry Logo",
-          title: "Accreditry"
+          title: ""
         }}
         sections={[
           {

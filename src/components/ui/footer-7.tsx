@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -108,11 +107,13 @@ export const Footer7 = ({
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  title={logo.title}
+                  title={logo.alt}
                   className="h-8"
                 />
               </a>
-              <h2 className="text-xl font-semibold text-background">{logo.title}</h2>
+              {logo.title && (
+                <h2 className="text-xl font-semibold text-background">{logo.title}</h2>
+              )}
             </div>
             <p className="max-w-[70%] text-sm text-background/70">
               {description}
