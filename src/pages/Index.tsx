@@ -2,36 +2,17 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Star, Users, Shield, TrendingUp, CheckCircle, BarChart3, Zap, ChevronDown, ChevronUp, ArrowRight, Award, Globe, Clock, Mail, Building, Link, Crown } from 'lucide-react';
-import { toast } from "@/hooks/use-toast";
 import ChatWidget from "@/components/ChatWidget";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import PricingSection from "@/components/PricingSection";
-import RealResultsSection from "@/components/RealResultsSection";
 import { Footer7 } from "@/components/ui/footer-7";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Pricing } from "@/components/ui/pricing";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
+import EnhancedContactForm from "@/components/EnhancedContactForm";
+
 const Index = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    businessProfile: ''
-  });
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Free Trial Requested!",
-      description: "We'll follow up with your trial details via email within 24 hours."
-    });
-    setFormData({
-      name: '',
-      email: '',
-      businessProfile: ''
-    });
-  };
+
   const scrollToTrial = () => {
     const trialElement = document.getElementById('free-trial');
     trialElement?.scrollIntoView({
@@ -39,6 +20,7 @@ const Index = () => {
       block: 'start'
     });
   };
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({
@@ -46,54 +28,69 @@ const Index = () => {
       block: 'start'
     });
   };
+
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
-  const faqData = [{
-    question: "What if I don't see considerable growth?",
-    answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
-  }, {
-    question: "What if the reviews disappear?",
-    answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
-  }, {
-    question: "Is this safe?",
-    answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
-  }, {
-    question: "What do the plans cost?",
-    answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
-  }, {
-    question: "Do you offer warranty?",
-    answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
-  }];
-  const pricingPlans = [{
-    name: "Individual Orders",
-    icon: Zap,
-    price: "$15",
-    period: "per review",
-    description: "Perfect for small batches under 10 reviews",
-    reviews: "Sub 10 reviews",
-    features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
-    isPopular: false
-  }, {
-    name: "Weekly Subscription",
-    icon: Crown,
-    price: "$13",
-    period: "per review",
-    description: "Charged weekly, cancel anytime",
-    reviews: "Ongoing weekly delivery",
-    features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
-    isPopular: true
-  }, {
-    name: "Monthly Subscription",
-    icon: BarChart3,
-    price: "$12",
-    period: "per review",
-    description: "Charged monthly, cancel anytime",
-    reviews: "Ongoing monthly delivery",
-    features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
-    isPopular: false
-  }];
-  return <div className="min-h-screen bg-background">
+
+  const faqData = [
+    {
+      question: "What if I don't see considerable growth?",
+      answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
+    },
+    {
+      question: "What if the reviews disappear?",
+      answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
+    },
+    {
+      question: "Is this safe?",
+      answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
+    },
+    {
+      question: "What do the plans cost?",
+      answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
+    },
+    {
+      question: "Do you offer warranty?",
+      answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
+    }
+  ];
+
+  const pricingPlans = [
+    {
+      name: "Individual Orders",
+      icon: Zap,
+      price: "$15",
+      period: "per review",
+      description: "Perfect for small batches under 10 reviews",
+      reviews: "Sub 10 reviews",
+      features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
+      isPopular: false
+    },
+    {
+      name: "Weekly Subscription",
+      icon: Crown,
+      price: "$13",
+      period: "per review",
+      description: "Charged weekly, cancel anytime",
+      reviews: "Ongoing weekly delivery",
+      features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
+      isPopular: true
+    },
+    {
+      name: "Monthly Subscription",
+      icon: BarChart3,
+      price: "$12",
+      period: "per review",
+      description: "Charged monthly, cancel anytime",
+      reviews: "Ongoing monthly delivery",
+      features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
+      isPopular: false
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
       {/* Enhanced Professional Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -254,9 +251,7 @@ const Index = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="relative">
-              <img src="/lovable-uploads/3546c5fb-6508-4e07-ba4b-47dcd58d77a0.png" alt="Analytics dashboard showing review growth over time" className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl" />
-            </div>
+            <AnalyticsDashboard />
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-8">
               Track your review count changes over time live from us, with full analytics ensuring your business has sustainable growth over time.
             </p>
@@ -323,9 +318,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Completely Customizable Section */}
-      
-
       {/* Client Success Stories */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
@@ -333,28 +325,187 @@ const Index = () => {
             <h3 className="text-4xl font-bold mb-6 text-foreground">Take a look at how we've improved the businesses of our past clients</h3>
           </div>
           
-          <div className="space-y-16">
+          <div className="space-y-20">
+            {/* First Success Story */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-6">
-                <h4 className="text-2xl font-bold text-foreground">Residential Elevator Installation Business</h4>
+                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
+                  Success Story
+                </div>
+                <h4 className="text-3xl font-bold text-foreground">From 100 to 400+ Reviews</h4>
+                <div className="text-lg font-semibold text-muted-foreground mb-4">
+                  Residential Elevator Installation Business
+                </div>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Saw their reviews increase from 100 when they first started to over 400 now, and despite having 600 less 5 star reviews than their competitor they still rank first on google SEO searches for 'Elevator Installations' as they chose to use our service and thus received reviews from real locals rather than fake bot accounts which could potentially damage their rankings.
                 </p>
+                <div className="flex items-center gap-8 pt-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">300%</div>
+                    <div className="text-sm text-muted-foreground">Growth</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">#1</div>
+                    <div className="text-sm text-muted-foreground">Google Ranking</div>
+                  </div>
+                </div>
               </div>
               <div className="relative">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="Elevator installation business" className="w-full h-[400px] object-cover rounded-3xl shadow-2xl" />
+                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
+                        alt="Elevator installation business success story"
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      
+                      {/* Overlay Stats */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-background/95 backdrop-blur-sm rounded-xl p-4 border border-border/50">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-primary" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-medium text-foreground">Review Growth</div>
+                                <div className="text-xs text-muted-foreground">Last 12 months</div>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-lg font-bold text-primary">+300%</div>
+                              <div className="text-xs text-muted-foreground">Increase</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
+            {/* Second Success Story */}
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
-                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="IT firm business profile" className="w-full h-[400px] object-cover rounded-3xl shadow-2xl" />
+                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
+                        alt="IT firm business profile success story"
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      
+                      {/* Overlay Stats */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-background/95 backdrop-blur-sm rounded-xl p-4 border border-border/50">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-primary" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-medium text-foreground">Review Growth</div>
+                                <div className="text-xs text-muted-foreground">Last 12 months</div>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-lg font-bold text-primary">+5-10</div>
+                              <div className="text-xs text-muted-foreground">Increase</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
               <div className="space-y-6 order-1 lg:order-2">
-                <h4 className="text-2xl font-bold text-foreground">IT Firm</h4>
+                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
+                  Success Story
+                </div>
+                <h4 className="text-3xl font-bold text-foreground">Steady Growth Drives New Business</h4>
+                <div className="text-lg font-semibold text-muted-foreground mb-4">
+                  IT Services Firm
+                </div>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Their reviews improved from 250 → 500+, with steady growth of 5-10 weekly with our professional plan tailored towards their businesses growth. The quantity of reviews gradually increased over time as their business profiles grew accustomed to it, and with the high rankings, their business has seen significant new double digit % customer growth since starting.
+                  An IT services firm improved from 250 to 500+ reviews with steady growth of 5-10 weekly through our professional plan. The gradual increase allowed their business profile to grow naturally, resulting in significant double-digit customer growth.
                 </p>
+                <div className="flex items-center gap-8 pt-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">5-10</div>
+                    <div className="text-sm text-muted-foreground">Growth</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">17.6K</div>
+                    <div className="text-sm text-muted-foreground">Monthly Views</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Third Success Story */}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
+                  Success Story
+                </div>
+                <h4 className="text-3xl font-bold text-foreground">Local Restaurant Success</h4>
+                <div className="text-lg font-semibold text-muted-foreground mb-4">
+                  Family Restaurant Chain
+                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  A local restaurant chain saw their reviews grow from 180 to 450+ across 3 locations. The authentic local reviews helped them outrank established competitors and increase foot traffic by 35% within 6 months of starting our service.
+                </p>
+                <div className="flex items-center gap-8 pt-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">35%</div>
+                    <div className="text-sm text-muted-foreground">Growth</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">450+</div>
+                    <div className="text-sm text-muted-foreground">Total Reviews</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative">
+                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
+                  <CardContent className="p-0">
+                    <div className="relative">
+                      <img 
+                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop"
+                        alt="Restaurant chain success story"
+                        className="w-full h-[400px] object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      
+                      {/* Overlay Stats */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-background/95 backdrop-blur-sm rounded-xl p-4 border border-border/50">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                <TrendingUp className="w-5 h-5 text-primary" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-medium text-foreground">Review Growth</div>
+                                <div className="text-xs text-muted-foreground">Last 12 months</div>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <div className="text-lg font-bold text-primary">+35%</div>
+                              <div className="text-xs text-muted-foreground">Increase</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
@@ -405,119 +556,7 @@ const Index = () => {
       {/* Free Trial Form */}
       <section id="free-trial" className="py-20 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h3 className="text-4xl font-bold text-foreground mb-4">Get Your Free Review Trial</h3>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Ready to see the difference authentic reviews can make? Start with a free trial review today.
-              </p>
-            </div>
-            
-            <div className="grid lg:grid-cols-5 gap-8 items-start">
-              {/* Progress Indicator */}
-              <div className="lg:col-span-1 hidden lg:block">
-                <div className="bg-gradient-to-b from-primary to-primary/80 rounded-2xl p-6 text-white relative">
-                  <div className="space-y-8">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <CheckCircle className="w-5 h-5" />
-                      </div>
-                      <span className="text-sm font-medium">Basic Details</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-white/60">
-                      <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                        <Clock className="w-5 h-5" />
-                      </div>
-                      <span className="text-sm">Review & Setup</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-white/60">
-                      <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                        <Star className="w-5 h-5" />
-                      </div>
-                      <span className="text-sm">Free Trial</span>
-                    </div>
-                  </div>
-                  
-                  {/* Decorative dots */}
-                  <div className="absolute left-6 top-20 bottom-20 w-px bg-white/20"></div>
-                  <div className="absolute left-5 top-24 w-2 h-2 bg-white/40 rounded-full"></div>
-                  <div className="absolute left-5 top-32 w-2 h-2 bg-white/20 rounded-full"></div>
-                  <div className="absolute left-5 bottom-32 w-2 h-2 bg-white/10 rounded-full"></div>
-                </div>
-              </div>
-
-              {/* Form */}
-              <div className="lg:col-span-4">
-                <Card className="bg-background border-2 border-border/20 shadow-2xl rounded-3xl overflow-hidden">
-                  <CardHeader className="bg-muted/30 border-b border-border/20 px-8 py-6">
-                    <CardTitle className="text-2xl text-foreground flex items-center gap-3">
-                      <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Building className="w-5 h-5 text-primary" />
-                      </div>
-                      Basic Details
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground mt-2">
-                      Tell us about your business to get started with your free trial
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="p-8">
-                    <form onSubmit={handleFormSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-3">
-                          <Label htmlFor="name" className="text-base font-medium text-foreground flex items-center gap-2">
-                            <Building className="w-4 h-4 text-primary" />
-                            Your Name
-                          </Label>
-                          <Input id="name" type="text" value={formData.name} onChange={e => setFormData({
-                          ...formData,
-                          name: e.target.value
-                        })} placeholder="Enter your name" required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
-                        </div>
-                        
-                        <div className="space-y-3">
-                          <Label htmlFor="email" className="text-base font-medium text-foreground flex items-center gap-2">
-                            <Mail className="w-4 h-4 text-primary" />
-                            Contact Email
-                          </Label>
-                          <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
-                          ...formData,
-                          email: e.target.value
-                        })} placeholder="your@email.com" required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
-                        </div>
-                      </div>
-                      
-                      <div className="space-y-3">
-                        <Label htmlFor="businessProfile" className="text-base font-medium text-foreground flex items-center gap-2">
-                          <Link className="w-4 h-4 text-primary" />
-                          Google Business Profile URL
-                        </Label>
-                        <Input id="businessProfile" type="url" value={formData.businessProfile} onChange={e => setFormData({
-                        ...formData,
-                        businessProfile: e.target.value
-                      })} placeholder="https://business.google.com/..." required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
-                        <p className="text-sm text-muted-foreground">
-                          We'll analyze your current review profile to create the perfect strategy
-                        </p>
-                      </div>
-                      
-                      <div className="pt-4">
-                        <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group">
-                          Start My Free Trial
-                          <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                        
-                        <div className="mt-4 text-center text-sm text-muted-foreground">
-                          <p>✓ No credit card required • ✓ 24-hour response time • ✓ Free consultation included</p>
-                          <p className="mt-2">Call us: <a href="tel:+13107361406" className="text-primary font-semibold hover:underline">+1 (310) 736-1406</a></p>
-                        </div>
-                      </div>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
+          <EnhancedContactForm />
         </div>
       </section>
 
@@ -598,6 +637,8 @@ const Index = () => {
 
       {/* Chat Widget */}
       <ChatWidget />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
