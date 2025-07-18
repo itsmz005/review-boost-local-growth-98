@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -89,21 +88,6 @@ const Index = () => {
 
   const pricingPlans = [
     {
-      name: "Free Trial",
-      icon: Star,
-      price: "$0",
-      period: "",
-      description: "Try our service with one free review",
-      reviews: "1 free review",
-      features: [
-        "1 authentic review",
-        "Real local reviewer",
-        "24-hour delivery",
-        "No commitment required"
-      ],
-      isPopular: false
-    },
-    {
       name: "Individual Orders", 
       icon: Zap,
       price: "$15",
@@ -162,7 +146,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" 
                 alt="Accreditry Logo"
-                className="h-8 w-auto"
+                className="h-6 w-auto"
               />
             </div>
             <nav className="hidden md:flex items-center space-x-8">
