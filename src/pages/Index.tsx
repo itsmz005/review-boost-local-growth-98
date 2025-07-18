@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -88,55 +89,64 @@ const Index = () => {
 
   const pricingPlans = [
     {
-      name: "Starter",
+      name: "Free Trial",
       icon: Star,
-      price: "$299",
-      period: "/month",
-      description: "Perfect for small businesses getting started",
-      reviews: "5-8 reviews per month",
+      price: "$0",
+      period: "",
+      description: "Try our service with one free review",
+      reviews: "1 free review",
       features: [
-        "5-8 authentic reviews monthly",
-        "Real local reviewers",
-        "Basic analytics dashboard",
-        "Email support",
-        "30-day review warranty"
+        "1 authentic review",
+        "Real local reviewer",
+        "24-hour delivery",
+        "No commitment required"
       ],
       isPopular: false
     },
     {
-      name: "Professional", 
+      name: "Individual Orders", 
       icon: Zap,
-      price: "$599",
-      period: "/month",
-      description: "Most popular for growing businesses",
-      reviews: "12-15 reviews per month",
+      price: "$15",
+      period: "per review",
+      description: "Perfect for small batches under 10 reviews",
+      reviews: "Sub 10 reviews",
       features: [
-        "12-15 authentic reviews monthly",
-        "Priority reviewer selection",
-        "Advanced analytics & reporting",
-        "Phone + email support",
-        "60-day review warranty",
-        "Custom review scheduling",
-        "Competitor analysis"
+        "Up to 10 authentic reviews",
+        "Real local reviewers",
+        "Custom review content",
+        "7-day delivery window"
+      ],
+      isPopular: false
+    },
+    {
+      name: "Weekly Subscription",
+      icon: Crown,
+      price: "$13",
+      period: "per review",
+      description: "Charged weekly, cancel anytime",
+      reviews: "Ongoing weekly delivery",
+      features: [
+        "Weekly review delivery",
+        "Real local reviewers",
+        "Cancel anytime",
+        "Priority support",
+        "Custom scheduling"
       ],
       isPopular: true
     },
     {
-      name: "Enterprise",
-      icon: Crown,
-      price: "Custom",
-      period: "pricing",
-      description: "For established businesses with high volume needs",
-      reviews: "20+ reviews per month",
+      name: "Monthly Subscription",
+      icon: BarChart3,
+      price: "$12",
+      period: "per review",
+      description: "Charged monthly, cancel anytime",
+      reviews: "Ongoing monthly delivery",
       features: [
-        "20+ authentic reviews monthly",
-        "Dedicated account manager",
-        "White-label reporting",
-        "24/7 priority support",
-        "90-day review warranty",
-        "Multi-location support",
-        "API access",
-        "Custom integrations"
+        "Monthly review delivery",
+        "Real local reviewers", 
+        "Cancel anytime",
+        "Best value pricing",
+        "Advanced analytics"
       ],
       isPopular: false
     }
@@ -279,7 +289,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - 3 Circle Boxes */}
       <section id="services" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -307,9 +317,9 @@ const Index = () => {
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Real Local Americans</CardTitle>
+                <CardTitle className="text-2xl text-foreground mb-3">Real Reviewers Near Your Business</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Genuine reviewers with established accounts and authentic review histories - not fresh or fake profiles
+                  Genuine reviewers with established accounts and authentic review histories in your local area
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -329,121 +339,169 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Real Results Section */}
-      <RealResultsSection />
+      {/* Analytics Dashboard Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/3546c5fb-6508-4e07-ba4b-47dcd58d77a0.png" 
+                alt="Analytics dashboard showing review growth over time"
+                className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl"
+              />
+            </div>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-8">
+              Track your review count changes over time live from us, with full analytics ensuring your business has sustainable growth over time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Promise Section - 2x2 Bubbly Boxes */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold mb-6 text-foreground">Our Promise</h3>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-foreground mb-3">Written by Real Locals</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  Our reviewers are all real locals to ensure high review stickiness and identical effect to reviews you currently get
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-foreground mb-3">Advanced Analytics and Refills</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  Our system automatically checks if any reviews from our side drops off and automatically schedules new tasks for them to be reposted at a future date in the rare chance this occurs
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-foreground mb-3">Only Personal Accounts</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  All our reviewers are audited to ensure that they only use their main personal accounts and not another secondary account, to ensure legitimacy and many will also have a review history
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl text-foreground mb-3">Maximised Realism & Effectiveness</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
+                  Our slow drip approach whereby only 1-3 reviews are delivered on a weekly basis allows for the best and safest SEO effect, mimicking additional reviews you would normally receive
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Completely Customizable Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-4xl font-bold mb-6 text-foreground">Completely Customizable</h3>
+                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+                  Our team of professionals will write the most effective reviews relevant to your business for you to verify / customise before being posted.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/62e11244-9579-4993-a7e1-ef1d11a3d95f.png" 
+                alt="UI Screenshot showing customizable review interface"
+                className="w-full rounded-3xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Success Stories */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold mb-6 text-foreground">Take a look at how we've improved the businesses of our past clients</h3>
+          </div>
+          
+          <div className="space-y-16">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <h4 className="text-2xl font-bold text-foreground">Residential Elevator Installation Business</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Saw their reviews increase from 100 when they first started to over 400 now, and despite having 600 less 5 star reviews than their competitor they still rank first on google SEO searches for 'Elevator Installations' as they chose to use our service and thus received reviews from real locals rather than fake bot accounts which could potentially damage their rankings.
+                </p>
+              </div>
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" 
+                  alt="Elevator installation business"
+                  className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="relative order-2 lg:order-1">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" 
+                  alt="IT firm business profile"
+                  className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
+                />
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <h4 className="text-2xl font-bold text-foreground">IT Firm</h4>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Their reviews improved from 250 → 500+, with steady growth of 5-10 weekly with our professional plan tailored towards their businesses growth. The quantity of reviews gradually increased over time as their business profiles grew accustomed to it, and with the high rankings, their business has seen significant new double digit % customer growth since starting.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-16">
+            <p className="text-muted-foreground mb-8 italic">
+              To protect the confidentiality of our clients, we aren't revealing exact names.
+            </p>
+            <Button 
+              onClick={scrollToTrial}
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Try it out today, free of charge!
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Pricing Section */}
       <Pricing 
         plans={pricingPlans}
         onCardClick={scrollToTrial}
       />
-
-      {/* Analytics Section - Image Left, Text Right */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" 
-                alt="Real-time analytics dashboard showing business growth"
-                className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl"></div>
-            </div>
-            
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-4xl font-bold mb-6 text-foreground">Track Your Success in Real-Time</h3>
-                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                  Monitor your review growth with our comprehensive analytics dashboard. See exactly how we're helping your business grow, with full transparency and detailed reporting.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-background rounded-2xl p-6 shadow-lg border border-border">
-                  <div className="text-3xl font-bold text-primary mb-2">+247%</div>
-                  <div className="text-sm text-muted-foreground">Review Growth</div>
-                </div>
-                <div className="bg-background rounded-2xl p-6 shadow-lg border border-border">
-                  <div className="text-3xl font-bold text-primary mb-2">98.2%</div>
-                  <div className="text-sm text-muted-foreground">Retention Rate</div>
-                </div>
-                <div className="bg-background rounded-2xl p-6 shadow-lg border border-border">
-                  <div className="text-3xl font-bold text-primary mb-2">4.9★</div>
-                  <div className="text-sm text-muted-foreground">Avg Rating</div>
-                </div>
-                <div className="bg-background rounded-2xl p-6 shadow-lg border border-border">
-                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                  <div className="text-sm text-muted-foreground">Monitoring</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Promise Section - Text Left, Image Right */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-4xl font-bold mb-6 text-foreground">Our Promise to You</h3>
-                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                  We're committed to delivering exceptional results through authentic reviews and unmatched service quality.
-                </p>
-              </div>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-foreground mb-2">Written by Real Locals</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Our reviewers are all real locals to ensure high review stickiness and identical effect to reviews you currently get
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <BarChart3 className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-foreground mb-2">Advanced Analytics & Refills</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Our system automatically checks if any reviews drop off and schedules replacements for maximum reliability
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-foreground mb-2">Only Personal Accounts</h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      All reviewers use their main personal accounts with established review histories for maximum authenticity
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop" 
-                alt="Team of professionals working on authentic review campaigns"
-                className="w-full h-[500px] object-cover rounded-3xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-muted/30">
@@ -481,7 +539,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Redesigned Free Trial Form */}
+      {/* Free Trial Form */}
       <section id="free-trial" className="py-20 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
@@ -546,14 +604,14 @@ const Index = () => {
                         <div className="space-y-3">
                           <Label htmlFor="name" className="text-base font-medium text-foreground flex items-center gap-2">
                             <Building className="w-4 h-4 text-primary" />
-                            Business Name
+                            Your Name
                           </Label>
                           <Input
                             id="name"
                             type="text"
                             value={formData.name}
                             onChange={(e) => setFormData({...formData, name: e.target.value})}
-                            placeholder="Enter your business name"
+                            placeholder="Enter your name"
                             required
                             className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background"
                           />
@@ -607,6 +665,7 @@ const Index = () => {
                         
                         <div className="mt-4 text-center text-sm text-muted-foreground">
                           <p>✓ No credit card required • ✓ 24-hour response time • ✓ Free consultation included</p>
+                          <p className="mt-2">Call us: <a href="tel:+13107361406" className="text-primary font-semibold hover:underline">+1 (310) 736-1406</a></p>
                         </div>
                       </div>
                     </form>
@@ -618,7 +677,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer - Made Black */}
       <Footer7 
         logo={{
           url: "#",
@@ -650,7 +709,7 @@ const Index = () => {
             links: [
               { name: "Help Center", href: "#" },
               { name: "FAQ", href: "#faq" },
-              { name: "Contact Support", href: "#" },
+              { name: "Contact Support", href: "tel:+13107361406" },
               { name: "Live Chat", href: "#" }
             ]
           }
