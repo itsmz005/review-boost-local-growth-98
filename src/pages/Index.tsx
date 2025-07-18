@@ -4,25 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { 
-  Star, 
-  Users, 
-  Shield, 
-  TrendingUp, 
-  CheckCircle, 
-  BarChart3, 
-  Zap, 
-  ChevronDown,
-  ChevronUp,
-  ArrowRight,
-  Award,
-  Globe,
-  Clock,
-  Mail,
-  Building,
-  Link,
-  Crown
-} from 'lucide-react';
+import { Star, Users, Shield, TrendingUp, CheckCircle, BarChart3, Zap, ChevronDown, ChevronUp, ArrowRight, Award, Globe, Clock, Mail, Building, Link, Crown } from 'lucide-react';
 import { toast } from "@/hooks/use-toast";
 import ChatWidget from "@/components/ChatWidget";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -31,7 +13,6 @@ import RealResultsSection from "@/components/RealResultsSection";
 import { Footer7 } from "@/components/ui/footer-7";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Pricing } from "@/components/ui/pricing";
-
 const Index = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -39,140 +20,99 @@ const Index = () => {
     businessProfile: ''
   });
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Free Trial Requested!",
-      description: "We'll follow up with your trial details via email within 24 hours.",
+      description: "We'll follow up with your trial details via email within 24 hours."
     });
-    setFormData({ name: '', email: '', businessProfile: '' });
+    setFormData({
+      name: '',
+      email: '',
+      businessProfile: ''
+    });
   };
-
   const scrollToTrial = () => {
     const trialElement = document.getElementById('free-trial');
-    trialElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    trialElement?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    element?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
-
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
-
-  const faqData = [
-    {
-      question: "What if I don't see considerable growth?",
-      answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
-    },
-    {
-      question: "What if the reviews disappear?",
-      answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
-    },
-    {
-      question: "Is this safe?",
-      answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
-    },
-    {
-      question: "What do the plans cost?",
-      answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
-    },
-    {
-      question: "Do you offer warranty?",
-      answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
-    }
-  ];
-
-  const pricingPlans = [
-    {
-      name: "Individual Orders", 
-      icon: Zap,
-      price: "$15",
-      period: "per review",
-      description: "Perfect for small batches under 10 reviews",
-      reviews: "Sub 10 reviews",
-      features: [
-        "Up to 10 authentic reviews",
-        "Real local reviewers",
-        "Custom review content",
-        "7-day delivery window"
-      ],
-      isPopular: false
-    },
-    {
-      name: "Weekly Subscription",
-      icon: Crown,
-      price: "$13",
-      period: "per review",
-      description: "Charged weekly, cancel anytime",
-      reviews: "Ongoing weekly delivery",
-      features: [
-        "Weekly review delivery",
-        "Real local reviewers",
-        "Cancel anytime",
-        "Priority support",
-        "Custom scheduling"
-      ],
-      isPopular: true
-    },
-    {
-      name: "Monthly Subscription",
-      icon: BarChart3,
-      price: "$12",
-      period: "per review",
-      description: "Charged monthly, cancel anytime",
-      reviews: "Ongoing monthly delivery",
-      features: [
-        "Monthly review delivery",
-        "Real local reviewers", 
-        "Cancel anytime",
-        "Best value pricing",
-        "Advanced analytics"
-      ],
-      isPopular: false
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const faqData = [{
+    question: "What if I don't see considerable growth?",
+    answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
+  }, {
+    question: "What if the reviews disappear?",
+    answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
+  }, {
+    question: "Is this safe?",
+    answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
+  }, {
+    question: "What do the plans cost?",
+    answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
+  }, {
+    question: "Do you offer warranty?",
+    answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
+  }];
+  const pricingPlans = [{
+    name: "Individual Orders",
+    icon: Zap,
+    price: "$15",
+    period: "per review",
+    description: "Perfect for small batches under 10 reviews",
+    reviews: "Sub 10 reviews",
+    features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
+    isPopular: false
+  }, {
+    name: "Weekly Subscription",
+    icon: Crown,
+    price: "$13",
+    period: "per review",
+    description: "Charged weekly, cancel anytime",
+    reviews: "Ongoing weekly delivery",
+    features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
+    isPopular: true
+  }, {
+    name: "Monthly Subscription",
+    icon: BarChart3,
+    price: "$12",
+    period: "per review",
+    description: "Charged monthly, cancel anytime",
+    reviews: "Ongoing monthly delivery",
+    features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
+    isPopular: false
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Enhanced Professional Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <img 
-                src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" 
-                alt="Accreditry Logo"
-                className="h-6 w-auto"
-              />
+              <img src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-6 w-auto" />
             </div>
             <nav className="hidden md:flex items-center space-x-8">
-              <button 
-                onClick={() => scrollToSection('services')} 
-                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
-              >
+              <button onClick={() => scrollToSection('services')} className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none">
                 How it works
               </button>
-              <button 
-                onClick={() => scrollToSection('pricing')} 
-                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
-              >
+              <button onClick={() => scrollToSection('pricing')} className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none">
                 Pricing
               </button>
-              <button 
-                onClick={() => scrollToSection('faq')} 
-                className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none"
-              >
+              <button onClick={() => scrollToSection('faq')} className="text-foreground/80 hover:text-primary transition-colors text-lg font-medium cursor-pointer bg-transparent border-none">
                 FAQ
               </button>
             </nav>
-            <Button 
-              onClick={scrollToTrial}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            <Button onClick={scrollToTrial} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
               Get started free
             </Button>
           </div>
@@ -199,20 +139,11 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  onClick={scrollToTrial}
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
+                <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => scrollToSection('testimonials')}
-                  className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 py-4 text-lg font-medium"
-                >
+                <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 py-4 text-lg font-medium">
                   View Success Stories
                 </Button>
               </div>
@@ -240,11 +171,7 @@ const Index = () => {
             {/* Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=500&fit=crop" 
-                  alt="Professional business team helping with review growth"
-                  className="w-full h-[500px] object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=500&fit=crop" alt="Professional business team helping with review growth" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
@@ -328,11 +255,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/3546c5fb-6508-4e07-ba4b-47dcd58d77a0.png" 
-                alt="Analytics dashboard showing review growth over time"
-                className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl"
-              />
+              <img src="/lovable-uploads/3546c5fb-6508-4e07-ba4b-47dcd58d77a0.png" alt="Analytics dashboard showing review growth over time" className="w-full max-w-4xl mx-auto rounded-3xl shadow-2xl" />
             </div>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-8">
               Track your review count changes over time live from us, with full analytics ensuring your business has sustainable growth over time.
@@ -401,28 +324,7 @@ const Index = () => {
       </section>
 
       {/* Completely Customizable Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-4xl font-bold mb-6 text-foreground">Completely Customizable</h3>
-                <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                  Our team of professionals will write the most effective reviews relevant to your business for you to verify / customise before being posted.
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/62e11244-9579-4993-a7e1-ef1d11a3d95f.png" 
-                alt="UI Screenshot showing customizable review interface"
-                className="w-full rounded-3xl shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Client Success Stories */}
       <section className="py-20 bg-background">
@@ -440,21 +342,13 @@ const Index = () => {
                 </p>
               </div>
               <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" 
-                  alt="Elevator installation business"
-                  className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
-                />
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="Elevator installation business" className="w-full h-[400px] object-cover rounded-3xl shadow-2xl" />
               </div>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="relative order-2 lg:order-1">
-                <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" 
-                  alt="IT firm business profile"
-                  className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
-                />
+                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="IT firm business profile" className="w-full h-[400px] object-cover rounded-3xl shadow-2xl" />
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <h4 className="text-2xl font-bold text-foreground">IT Firm</h4>
@@ -469,11 +363,7 @@ const Index = () => {
             <p className="text-muted-foreground mb-8 italic">
               To protect the confidentiality of our clients, we aren't revealing exact names.
             </p>
-            <Button 
-              onClick={scrollToTrial}
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
               Try it out today, free of charge!
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -482,10 +372,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <Pricing 
-        plans={pricingPlans}
-        onCardClick={scrollToTrial}
-      />
+      <Pricing plans={pricingPlans} onCardClick={scrollToTrial} />
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-muted/30">
@@ -498,27 +385,19 @@ const Index = () => {
           </div>
           
           <div className="max-w-4xl mx-auto space-y-4">
-            {faqData.map((faq, index) => (
-              <Card key={index} className="cursor-pointer border-2 border-border/50 hover:border-primary/20 hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden" onClick={() => toggleFaq(index)}>
+            {faqData.map((faq, index) => <Card key={index} className="cursor-pointer border-2 border-border/50 hover:border-primary/20 hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden" onClick={() => toggleFaq(index)}>
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl font-semibold text-foreground pr-4">{faq.question}</h4>
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      {expandedFaq === index ? (
-                        <ChevronUp className="w-5 h-5 text-primary" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-primary" />
-                      )}
+                      {expandedFaq === index ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-primary" />}
                     </div>
                   </div>
                 </CardHeader>
-                {expandedFaq === index && (
-                  <CardContent className="pt-0">
+                {expandedFaq === index && <CardContent className="pt-0">
                     <p className="text-lg text-muted-foreground leading-relaxed">{faq.answer}</p>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
+                  </CardContent>}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -590,15 +469,10 @@ const Index = () => {
                             <Building className="w-4 h-4 text-primary" />
                             Your Name
                           </Label>
-                          <Input
-                            id="name"
-                            type="text"
-                            value={formData.name}
-                            onChange={(e) => setFormData({...formData, name: e.target.value})}
-                            placeholder="Enter your name"
-                            required
-                            className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background"
-                          />
+                          <Input id="name" type="text" value={formData.name} onChange={e => setFormData({
+                          ...formData,
+                          name: e.target.value
+                        })} placeholder="Enter your name" required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
                         </div>
                         
                         <div className="space-y-3">
@@ -606,15 +480,10 @@ const Index = () => {
                             <Mail className="w-4 h-4 text-primary" />
                             Contact Email
                           </Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
-                            placeholder="your@email.com"
-                            required
-                            className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background"
-                          />
+                          <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
+                          ...formData,
+                          email: e.target.value
+                        })} placeholder="your@email.com" required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
                         </div>
                       </div>
                       
@@ -623,26 +492,17 @@ const Index = () => {
                           <Link className="w-4 h-4 text-primary" />
                           Google Business Profile URL
                         </Label>
-                        <Input
-                          id="businessProfile"
-                          type="url"
-                          value={formData.businessProfile}
-                          onChange={(e) => setFormData({...formData, businessProfile: e.target.value})}
-                          placeholder="https://business.google.com/..."
-                          required
-                          className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background"
-                        />
+                        <Input id="businessProfile" type="url" value={formData.businessProfile} onChange={e => setFormData({
+                        ...formData,
+                        businessProfile: e.target.value
+                      })} placeholder="https://business.google.com/..." required className="text-base py-3 px-4 border-2 border-border/50 rounded-xl focus:border-primary/50 transition-colors bg-background" />
                         <p className="text-sm text-muted-foreground">
                           We'll analyze your current review profile to create the perfect strategy
                         </p>
                       </div>
                       
                       <div className="pt-4">
-                        <Button 
-                          type="submit" 
-                          size="lg" 
-                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
-                        >
+                        <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group">
                           Start My Free Trial
                           <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
@@ -662,60 +522,82 @@ const Index = () => {
       </section>
 
       {/* Footer - Made Black */}
-      <Footer7 
-        logo={{
-          url: "#",
-          src: "/lovable-uploads/6af8b769-c93d-41dc-b4c2-3f074d0db8bf.png",
-          alt: "Accreditry Logo",
-          title: ""
-        }}
-        sections={[
-          {
-            title: "Services",
-            links: [
-              { name: "Review Management", href: "#services" },
-              { name: "Analytics", href: "#analytics" },
-              { name: "Pricing", href: "#pricing" },
-              { name: "Free Trial", href: "#free-trial" }
-            ]
-          },
-          {
-            title: "Company",
-            links: [
-              { name: "About Us", href: "#" },
-              { name: "How It Works", href: "#services" },
-              { name: "Success Stories", href: "#" },
-              { name: "Contact", href: "#" }
-            ]
-          },
-          {
-            title: "Support",
-            links: [
-              { name: "Help Center", href: "#" },
-              { name: "FAQ", href: "#faq" },
-              { name: "Contact Support", href: "tel:+13107361406" },
-              { name: "Live Chat", href: "#" }
-            ]
-          }
-        ]}
-        description="Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results."
-        socialLinks={[
-          { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-          { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-          { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-          { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" }
-        ]}
-        copyright="© 2025 Accreditry. All rights reserved. Executed by Webtic Studio"
-        legalLinks={[
-          { name: "Terms of Service", href: "#" },
-          { name: "Privacy Policy", href: "#" }
-        ]}
-      />
+      <Footer7 logo={{
+      url: "#",
+      src: "/lovable-uploads/6af8b769-c93d-41dc-b4c2-3f074d0db8bf.png",
+      alt: "Accreditry Logo",
+      title: ""
+    }} sections={[{
+      title: "Services",
+      links: [{
+        name: "Review Management",
+        href: "#services"
+      }, {
+        name: "Analytics",
+        href: "#analytics"
+      }, {
+        name: "Pricing",
+        href: "#pricing"
+      }, {
+        name: "Free Trial",
+        href: "#free-trial"
+      }]
+    }, {
+      title: "Company",
+      links: [{
+        name: "About Us",
+        href: "#"
+      }, {
+        name: "How It Works",
+        href: "#services"
+      }, {
+        name: "Success Stories",
+        href: "#"
+      }, {
+        name: "Contact",
+        href: "#"
+      }]
+    }, {
+      title: "Support",
+      links: [{
+        name: "Help Center",
+        href: "#"
+      }, {
+        name: "FAQ",
+        href: "#faq"
+      }, {
+        name: "Contact Support",
+        href: "tel:+13107361406"
+      }, {
+        name: "Live Chat",
+        href: "#"
+      }]
+    }]} description="Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results." socialLinks={[{
+      icon: <FaInstagram className="size-5" />,
+      href: "#",
+      label: "Instagram"
+    }, {
+      icon: <FaFacebook className="size-5" />,
+      href: "#",
+      label: "Facebook"
+    }, {
+      icon: <FaTwitter className="size-5" />,
+      href: "#",
+      label: "Twitter"
+    }, {
+      icon: <FaLinkedin className="size-5" />,
+      href: "#",
+      label: "LinkedIn"
+    }]} copyright="© 2025 Accreditry. All rights reserved. Executed by Webtic Studio" legalLinks={[{
+      name: "Terms of Service",
+      href: "#"
+    }, {
+      name: "Privacy Policy",
+      href: "#"
+    }]} />
 
       {/* Chat Widget */}
       <ChatWidget />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
