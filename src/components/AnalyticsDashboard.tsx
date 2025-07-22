@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { TrendingUp } from 'lucide-react';
+import { TrendingUp, BarChart3 } from 'lucide-react';
 
 const AnalyticsDashboard = () => {
   // Simulated data points for the graph
@@ -36,15 +36,22 @@ const AnalyticsDashboard = () => {
     return `M${points.join(' L')}`;
   };
 
+  // Comparison data for bar chart
+  const comparisonData = [
+    { label: 'Without Accreditry', value: 1.5, color: 'hsl(var(--muted-foreground))' },
+    { label: 'With Accreditry', value: 3.5, color: 'hsl(var(--primary))' }
+  ];
+
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto space-y-8">
+      {/* Main Analytics Chart */}
       <Card className="bg-gradient-to-br from-slate-900 to-slate-800 border-primary/20 p-8 rounded-3xl overflow-hidden shadow-xl">
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-white text-xl font-semibold">Active Reviews Over Time - Your Business</h3>
+            <h3 className="text-white text-xl font-semibold">Review Growth Analytics - Live Dashboard</h3>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-              <span className="text-primary text-sm font-medium">Active Reviews</span>
+              <span className="text-primary text-sm font-medium">Live Data</span>
             </div>
           </div>
         </div>
@@ -60,8 +67,18 @@ const AnalyticsDashboard = () => {
                 <stop offset="0%" stopColor="hsl(var(--primary))" />
                 <stop offset="100%" stopColor="hsl(var(--primary) / 0.6)" />
               </linearGradient>
+              <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary) / 0.3)" />
+                <stop offset="100%" stopColor="hsl(var(--primary) / 0.05)" />
+              </linearGradient>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
+            
+            {/* Area under the curve */}
+            <path
+              d={`${createPath()} L760,160 L40,160 Z`}
+              fill="url(#areaGradient)"
+            />
             
             {/* Chart line */}
             <path
@@ -126,11 +143,50 @@ const AnalyticsDashboard = () => {
         <div className="flex items-center justify-between mt-6 pt-6 border-t border-primary/20">
           <div className="flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-primary" />
-            <span className="text-white font-medium">Growth Rate: +58%</span>
+            <span className="text-white font-medium">Total Growth: +387%</span>
           </div>
           <div className="text-muted-foreground text-sm">
-            Real-time analytics dashboard
+            Real-time business analytics
           </div>
+        </div>
+      </Card>
+
+      {/* Comparison Bar Chart */}
+      <Card className="bg-background border-border/50 p-8 rounded-3xl shadow-lg">
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-2">
+            <BarChart3 className="w-6 h-6 text-primary" />
+            <h4 className="text-2xl font-bold text-foreground">Weekly Review Comparison</h4>
+          </div>
+          <p className="text-muted-foreground">See the dramatic difference Accreditry makes to your review flow</p>
+        </div>
+        
+        <div className="space-y-6">
+          {comparisonData.map((item, index) => (
+            <div key={index} className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-foreground">{item.label}</span>
+                <span className="text-lg font-bold" style={{ color: item.color }}>
+                  {item.value} reviews/week
+                </span>
+              </div>
+              <div className="w-full bg-muted rounded-full h-4 overflow-hidden">
+                <div 
+                  className="h-full rounded-full transition-all duration-1000 ease-out"
+                  style={{ 
+                    width: `${(item.value / 4) * 100}%`,
+                    backgroundColor: item.color
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/20">
+          <p className="text-sm text-foreground text-center font-medium">
+            <span className="text-primary font-bold">+133% increase</span> in weekly reviews with our authentic approach
+          </p>
         </div>
       </Card>
     </div>
