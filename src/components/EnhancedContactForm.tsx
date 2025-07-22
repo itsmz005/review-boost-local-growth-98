@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { User, Mail, Globe, CheckCircle, Phone, Sparkles, ArrowRight, Shield } from 'lucide-react'
+import { User, Mail, Globe, CheckCircle, Phone, Sparkles, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -79,14 +79,13 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
           className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6"
         >
           <Sparkles className="w-4 h-4" />
-          Get Started Today
+          Basic Details
         </motion.div>
         
-        <h3 className="text-4xl font-bold text-foreground mb-4">Ready to Transform Your Business?</h3>
+        <h3 className="text-4xl font-bold text-foreground mb-4">Get Your Free Review Trial</h3>
         
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Join hundreds of businesses that have already discovered the power of authentic reviews. 
-          Your competition is already getting ahead - don't get left behind.
+          Ready to see the difference authentic reviews can make? Start with a free trial review today.
         </p>
       </motion.div>
 
@@ -190,24 +189,13 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
                 )}
               </Button>
 
-              {/* Privacy Notice */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground italic"
-              >
-                <Shield className="w-4 h-4 text-primary" />
-                Your information will never be shared without your permission
-              </motion.div>
-
               <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
                 {benefits.map((benefit, index) => (
                   <motion.div
                     key={benefit}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.9 + index * 0.1 }}
+                    transition={{ delay: 0.8 + index * 0.1 }}
                     className="flex items-center gap-2"
                   >
                     <CheckCircle className="w-4 h-4 text-green-500" />
@@ -219,12 +207,12 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 1.1 }}
                 className="text-center mt-8"
               >
                 <div className="flex items-center justify-center gap-2 text-lg font-semibold text-foreground">
                   <Phone className="w-5 h-5 text-primary" />
-                  Prefer to talk? Call us: 
+                  Call us: 
                   <a 
                     href="tel:+13107361406" 
                     className="text-primary hover:text-primary/80 transition-colors"
