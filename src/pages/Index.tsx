@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -124,7 +125,7 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 py-2 text-base font-medium">
-                  🚀 Trusted by 500+ Businesses Who Transformed Their Future
+                  🚀 Trusted by over 500 businesses who've seen a significant increase in traffic
                 </Badge>
                 <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Stop Losing Customers to 
