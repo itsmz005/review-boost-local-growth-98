@@ -224,7 +224,7 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
               >
                 <div className="flex items-center justify-center gap-2 text-lg font-semibold text-foreground">
                   <Phone className="w-5 h-5 text-primary" />
-                  Prefer to talk? Call us: 
+                  Call our Agent at: 
                   <a 
                     href="tel:+13107361406" 
                     className="text-primary hover:text-primary/80 transition-colors"
