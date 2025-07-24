@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -119,7 +118,7 @@ const Index = () => {
 
             {/* Desktop CTA Button */}
             <Button onClick={scrollToTrial} className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-4 lg:px-6 py-2 lg:py-3 text-sm lg:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Get started free
+              Get Started for Free
             </Button>
 
             {/* Mobile menu button */}
@@ -145,7 +144,7 @@ const Index = () => {
                   FAQ
                 </button>
                 <Button onClick={scrollToTrial} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mt-4">
-                  Get started free
+                  Get Started for Free
                 </Button>
               </nav>
             </div>
@@ -168,7 +167,7 @@ const Index = () => {
                 </h2>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
                   Every day you wait, potential customers choose your competitors based on their reviews. 
-                  Our authentic review system helps honest businesses like yours get the recognition you deserve - 
+                  Our automated review system helps honest businesses like yours get the recognition you deserve - 
                   from real local customers, not bots.
                 </p>
               </div>
@@ -193,8 +192,8 @@ const Index = () => {
                   <div className="text-xs sm:text-sm text-muted-foreground">See Growth in Month 1</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">247%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Avg Revenue Increase</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">184%</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Avg Traffic Increase</div>
                 </div>
                 <div className="text-center">
                   <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
@@ -206,7 +205,7 @@ const Index = () => {
             {/* Hero Image */}
             <div className="relative order-1 lg:order-2">
               <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop" alt="US map showing business locations and review network across the west coast" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
+                <img src="/lovable-uploads/6c7ff13a-4d5e-4885-9696-7682759a4aff.png" alt="US map showing business locations and review network across the west coast" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
               
@@ -217,7 +216,7 @@ const Index = () => {
                     <TrendingUp className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="text-xl lg:text-2xl font-bold text-foreground">+247%</div>
+                    <div className="text-xl lg:text-2xl font-bold text-foreground">+184%</div>
                     <div className="text-xs lg:text-sm text-muted-foreground">Avg Growth</div>
                   </div>
                 </div>
@@ -241,7 +240,7 @@ const Index = () => {
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              While others promise quick fixes with fake reviews, we deliver lasting growth with real people who actually care about your success
+              While others promise quick fixes with low-quality botted reviews that never stick, we're in the business of building long-term relationships. We ensure all reviews delivered stick with a 30-day warranty and maximize the effect by sourcing from real locals.
             </p>
           </div>
           
@@ -251,7 +250,7 @@ const Index = () => {
                 <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
                   <Heart className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
                 </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-3">Built for Your Success, Not Our Profits</CardTitle>
+                <CardTitle className="text-xl lg:text-2xl text-foreground mb-3">Personalized Towards Your Success</CardTitle>
                 <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
                   Every review is personally crafted to showcase what makes your business special. No templates, no copy-paste - just authentic voices that convert visitors into customers.
                 </CardDescription>
@@ -413,7 +412,6 @@ const Index = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
-                      {/* Overlay Stats */}
                       <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
                         <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
                           <div className="flex items-center justify-between">
@@ -452,7 +450,6 @@ const Index = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
-                      {/* Overlay Stats */}
                       <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
                         <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
                           <div className="flex items-center justify-between">
@@ -535,7 +532,6 @@ const Index = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
-                      {/* Overlay Stats */}
                       <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
                         <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
                           <div className="flex items-center justify-between">
