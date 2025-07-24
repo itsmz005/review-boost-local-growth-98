@@ -82,51 +82,51 @@ const RealReviewsCarousel = () => {
   const currentReview = realReviews[currentIndex];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-muted/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">Real Reviews We've Delivered</h3>
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+    <section className="py-20 bg-muted/20">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl font-bold mb-6 text-foreground">Real Reviews We've Delivered</h3>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             These are actual reviews from our service - see the authentic voices of satisfied customers
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto relative">
           <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden">
-            <CardContent className="p-6 sm:p-8 lg:p-12">
+            <CardContent className="p-8 md:p-12">
               {/* Rating Stars */}
-              <div className="flex items-center justify-center gap-1 mb-4 sm:mb-6">
+              <div className="flex items-center justify-center gap-1 mb-6">
                 {[...Array(currentReview.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 sm:w-6 sm:h-6 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               
               {/* Quote Icon */}
-              <div className="relative mb-6 sm:mb-8">
-                <Quote className="w-8 h-8 sm:w-12 sm:h-12 text-primary/20 absolute -top-2 sm:-top-4 -left-1 sm:-left-2" />
-                <p className="text-lg sm:text-xl lg:text-2xl text-foreground leading-relaxed pl-6 sm:pl-8 font-medium italic">
+              <div className="relative mb-8">
+                <Quote className="w-12 h-12 text-primary/20 absolute -top-4 -left-2" />
+                <p className="text-xl md:text-2xl text-foreground leading-relaxed pl-8 font-medium italic">
                   "{currentReview.text}"
                 </p>
               </div>
               
               {/* Reviewer Info */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center justify-between flex-wrap gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-bold text-base sm:text-lg">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-bold text-lg">
                       {currentReview.reviewer.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground text-base sm:text-lg">{currentReview.reviewer}</h4>
+                    <h4 className="font-semibold text-foreground text-lg">{currentReview.reviewer}</h4>
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="text-xs sm:text-sm">{currentReview.location}</span>
+                      <MapPin className="w-4 h-4" />
+                      <span className="text-sm">{currentReview.location}</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="text-left sm:text-right">
+                <div className="text-right">
                   <p className="text-sm text-muted-foreground">{currentReview.business}</p>
                   <p className="text-xs text-muted-foreground">{currentReview.date}</p>
                 </div>
@@ -135,14 +135,14 @@ const RealReviewsCarousel = () => {
           </Card>
           
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-4 mt-6 sm:mt-8">
+          <div className="flex items-center justify-center gap-4 mt-8">
             <Button
               variant="outline"
               size="icon"
               onClick={prevReview}
-              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-2 hover:border-primary/50"
+              className="rounded-full w-12 h-12 border-2 hover:border-primary/50"
             >
-              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ChevronLeft className="w-5 h-5" />
             </Button>
             
             {/* Dots Indicator */}
@@ -151,7 +151,7 @@ const RealReviewsCarousel = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex ? 'bg-primary scale-125' : 'bg-primary/30 hover:bg-primary/50'
                   }`}
                 />
@@ -162,9 +162,9 @@ const RealReviewsCarousel = () => {
               variant="outline"
               size="icon"
               onClick={nextReview}
-              className="rounded-full w-10 h-10 sm:w-12 sm:h-12 border-2 hover:border-primary/50"
+              className="rounded-full w-12 h-12 border-2 hover:border-primary/50"
             >
-              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
         </div>

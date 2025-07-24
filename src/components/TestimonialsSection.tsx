@@ -55,43 +55,42 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-foreground">What Our Clients Say</h3>
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+    <section className="py-20 bg-muted/30">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h3 className="text-4xl font-bold mb-6 text-foreground">What Our Clients Say</h3>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Join hundreds of businesses that have transformed their online presence with authentic reviews
           </p>
         </div>
         
-        {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-2xl overflow-hidden h-full">
-              <CardContent className="p-4 sm:p-6 lg:p-8 h-full flex flex-col">
-                <div className="flex items-center gap-1 mb-3 sm:mb-4">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-2xl overflow-hidden">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 
-                <div className="relative mb-4 sm:mb-6 flex-1">
-                  <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-primary/20 absolute -top-1 sm:-top-2 -left-1" />
-                  <p className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed pl-4 sm:pl-6">
+                <div className="relative mb-6">
+                  <Quote className="w-6 h-6 text-primary/20 absolute -top-2 -left-1" />
+                  <p className="text-muted-foreground leading-relaxed pl-4">
                     "{testimonial.text}"
                   </p>
                 </div>
                 
-                <div className="flex items-center gap-3 mt-auto">
+                <div className="flex items-center gap-3">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover"
                   />
-                  <div className="min-w-0 flex-1">
-                    <h4 className="font-semibold text-sm sm:text-base text-foreground truncate">{testimonial.name}</h4>
-                    <p className="text-xs sm:text-sm text-muted-foreground truncate">{testimonial.business}</p>
-                    <p className="text-xs text-muted-foreground truncate">{testimonial.location}</p>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.business}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </div>
               </CardContent>
