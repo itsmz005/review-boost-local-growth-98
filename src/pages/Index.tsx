@@ -171,8 +171,8 @@ const Index = () => {
             {/* Hero Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=500&fit=crop" alt="Professional business team helping with review growth" className="w-full h-[500px] object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop" alt="US map showing business locations and review network across the west coast" className="w-full h-[500px] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
               
               {/* Floating Stats Card */}
