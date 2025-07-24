@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +9,8 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Pricing } from "@/components/ui/pricing";
 import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
-
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-
   const scrollToTrial = () => {
     const trialElement = document.getElementById('free-trial');
     trialElement?.scrollIntoView({
@@ -21,7 +18,6 @@ const Index = () => {
       block: 'start'
     });
   };
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({
@@ -29,69 +25,54 @@ const Index = () => {
       block: 'start'
     });
   };
-
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
-
-  const faqData = [
-    {
-      question: "What if I don't see considerable growth?",
-      answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
-    },
-    {
-      question: "What if the reviews disappear?",
-      answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
-    },
-    {
-      question: "Is this safe?",
-      answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
-    },
-    {
-      question: "What do the plans cost?",
-      answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
-    },
-    {
-      question: "Do you offer warranty?",
-      answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
-    }
-  ];
-
-  const pricingPlans = [
-    {
-      name: "Individual Orders",
-      icon: Zap,
-      price: "$15",
-      period: "per review",
-      description: "Perfect for small batches under 10 reviews",
-      reviews: "Sub 10 reviews",
-      features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
-      isPopular: false
-    },
-    {
-      name: "Weekly Subscription",
-      icon: Crown,
-      price: "$13",
-      period: "per review",
-      description: "Charged weekly, cancel anytime",
-      reviews: "Ongoing weekly delivery",
-      features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
-      isPopular: true
-    },
-    {
-      name: "Monthly Subscription",
-      icon: BarChart3,
-      price: "$12",
-      period: "per review",
-      description: "Charged monthly, cancel anytime",
-      reviews: "Ongoing monthly delivery",
-      features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
-      isPopular: false
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const faqData = [{
+    question: "What if I don't see considerable growth?",
+    answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
+  }, {
+    question: "What if the reviews disappear?",
+    answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
+  }, {
+    question: "Is this safe?",
+    answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
+  }, {
+    question: "What do the plans cost?",
+    answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
+  }, {
+    question: "Do you offer warranty?",
+    answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
+  }];
+  const pricingPlans = [{
+    name: "Individual Orders",
+    icon: Zap,
+    price: "$15",
+    period: "per review",
+    description: "Perfect for small batches under 10 reviews",
+    reviews: "Sub 10 reviews",
+    features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
+    isPopular: false
+  }, {
+    name: "Weekly Subscription",
+    icon: Crown,
+    price: "$13",
+    period: "per review",
+    description: "Charged weekly, cancel anytime",
+    reviews: "Ongoing weekly delivery",
+    features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
+    isPopular: true
+  }, {
+    name: "Monthly Subscription",
+    icon: BarChart3,
+    price: "$12",
+    period: "per review",
+    description: "Charged monthly, cancel anytime",
+    reviews: "Ongoing monthly delivery",
+    features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
+    isPopular: false
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Enhanced Professional Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-6 py-4">
@@ -242,54 +223,7 @@ const Index = () => {
       </section>
 
       {/* Services Section - 3 Circle Boxes */}
-      <section id="services" className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6 text-foreground">How We Help Your Business Grow</h3>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our proven approach combines authentic reviews with smart analytics to deliver sustainable growth for your business
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
-              <CardHeader className="text-center pb-4 flex-1">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Zap className="w-10 h-10 text-primary" />
-                </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Completely Customizable</CardTitle>
-                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Every review is carefully crafted to match your business voice and resonate with your target customers
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-primary/20 bg-primary/5 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
-              <CardHeader className="text-center pb-4 flex-1">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-10 h-10 text-primary" />
-                </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Real Reviewers Near Your Business</CardTitle>
-                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Genuine reviewers with established accounts and authentic review histories in your local area
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
-              <CardHeader className="text-center pb-4 flex-1">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="w-10 h-10 text-primary" />
-                </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Identical to Natural Reviews</CardTitle>
-                <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Our reviews are indistinguishable from organic ones, ensuring your reputation grows naturally and safely
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Analytics Dashboard Section */}
       <section className="py-20 bg-muted/30">
@@ -398,11 +332,7 @@ const Index = () => {
                 <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
                   <CardContent className="p-0">
                     <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
-                        alt="Elevator installation business success story"
-                        className="w-full h-[400px] object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop" alt="Elevator installation business success story" className="w-full h-[400px] object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
                       {/* Overlay Stats */}
@@ -437,11 +367,7 @@ const Index = () => {
                 <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
                   <CardContent className="p-0">
                     <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
-                        alt="IT firm business profile success story"
-                        className="w-full h-[400px] object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="IT firm business profile success story" className="w-full h-[400px] object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
                       {/* Overlay Stats */}
@@ -520,11 +446,7 @@ const Index = () => {
                 <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-3xl">
                   <CardContent className="p-0">
                     <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop"
-                        alt="Restaurant chain success story"
-                        className="w-full h-[400px] object-cover"
-                      />
+                      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="Restaurant chain success story" className="w-full h-[400px] object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                       
                       {/* Overlay Stats */}
@@ -681,8 +603,6 @@ const Index = () => {
 
       {/* Chat Widget */}
       <ChatWidget />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
