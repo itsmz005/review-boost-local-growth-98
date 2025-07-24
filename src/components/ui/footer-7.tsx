@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -28,30 +27,26 @@ interface Footer7Props {
 
 const defaultSections = [
   {
-    title: "Product",
+    title: "Services",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "Free Trial", href: "#free-trial" },
+      { name: "How It Works", href: "#how-it-works" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "About", href: "#about" },
+      { name: "Contact", href: "#contact" },
+      { name: "Results", href: "#results" },
     ],
   },
   {
-    title: "Resources",
+    title: "Support",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "Help Center", href: "#contact" },
+      { name: "Contact Support", href: "#contact" },
     ],
   },
 ];
@@ -64,7 +59,7 @@ const defaultSocialLinks = [
 ];
 
 const defaultLegalLinks = [
-  { name: "Terms and Conditions", href: "#" },
+  { name: "Terms of Service", href: "#" },
   { name: "Privacy Policy", href: "#" },
 ];
 
