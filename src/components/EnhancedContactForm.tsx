@@ -39,7 +39,7 @@ const EnhancedContactForm = () => {
           🎯 Ready to Transform Your Business?
         </Badge>
         <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-          Get Your First <span className="text-primary">10 Reviews Free</span>
+          Get Your First <span className="text-primary">Review is Free</span>
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           Join hundreds of businesses that have transformed their online presence. 
