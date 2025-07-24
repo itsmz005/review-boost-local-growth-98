@@ -1,16 +1,14 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Users, Shield, TrendingUp, CheckCircle, BarChart3, Zap, ChevronDown, ChevronUp, ArrowRight, Award, Globe, Clock, Mail, Building, Link, Crown, Heart, Target } from 'lucide-react';
+import { Star, Users, Shield, TrendingUp, CheckCircle, BarChart3, Zap, ChevronDown, ChevronUp, ArrowRight, Award, Globe, Clock, Mail, Building, Link, Crown } from 'lucide-react';
 import ChatWidget from "@/components/ChatWidget";
 import { Footer7 } from "@/components/ui/footer-7";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Pricing } from "@/components/ui/pricing";
 import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
-import RealReviewsCarousel from "@/components/RealReviewsCarousel";
 
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -37,24 +35,24 @@ const Index = () => {
 
   const faqData = [
     {
-      question: "What if I don't see the growth I'm looking for?",
-      answer: "We're so confident in our approach that none of our plans require long-term contracts. If you're not seeing the results you want, you can cancel anytime - no questions asked. But here's the thing: 98% of our clients see significant growth within the first month."
+      question: "What if I don't see considerable growth?",
+      answer: "Don't worry we are confident you'll see growth with our plans that's why none of our plans are lock in and you're free to cancel whenever you'd like to no questions asked."
     },
     {
-      question: "What happens if reviews disappear?",
-      answer: "This is incredibly rare with our authentic approach, but we've got you covered. Our advanced monitoring system tracks every review, and if any do disappear, we automatically schedule replacements at no extra cost. Your investment is protected."
+      question: "What if the reviews disappear?",
+      answer: "Our system tracks all the review progress and we will inform you which reviews disappear in the rare cases which they do and we will schedule them for redelivery!"
     },
     {
-      question: "Is this actually safe for my business?",
-      answer: "Absolutely. When reviews come from real people with genuine accounts (like ours do), Google actually rewards your business. We've never had a client penalized because we follow Google's guidelines perfectly - real people, real accounts, real experiences."
+      question: "Is this safe?",
+      answer: "It's completely safe if it's written by real people from their personal accounts like our services offer, as well as if there aren't any sudden spikes in number of reviews, that's why we offer fully customised plans tailored towards each business we work with."
     },
     {
-      question: "How much does this really cost?",
-      answer: "Our pricing is straightforward and honest - typically $10-20 per review depending on your plan. But here's what matters: our clients usually see their investment pay for itself within weeks through increased business. We're not an expense, we're a growth investment."
+      question: "What do the plans cost?",
+      answer: "Our prices are dynamic but price of per review basis typically ranges from $10-$20. We work out a tailored and customised plan for every client to ensure the best results."
     },
     {
-      question: "Do you really guarantee the reviews will stick?",
-      answer: "Yes, we offer a 30-day warranty on every review. If any disappear, we replace them free of charge. We just ask that you let us know about any major promotions so we can time our reviews appropriately - your business profile needs to grow naturally."
+      question: "Do you offer warranty?",
+      answer: "We offer a 30day warranty on all reviews delivered, we will reschedule any which disappear for a refill. However what we do ask is you notify us of any business promotions which may result in a increased number of reviews within a short period as your google business profile is sensitive to sudden changes, thus we will schedule our reviews around those."
     }
   ];
 
@@ -118,52 +116,51 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section - More Emotional */}
+      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
                 <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 py-2 text-base font-medium">
-                  🚀 Trusted by over 500 businesses who've seen a significant increase in traffic
+                  🚀 Trusted by 500+ Businesses
                 </Badge>
                 <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Stop Losing Customers to 
-                  <span className="text-primary"> Better-Reviewed Competitors</span>
+                  Boost your business through 
+                  <span className="text-primary"> authentic reviews</span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Every day you wait, potential customers choose your competitors based on their reviews. 
-                  Our authentic review system helps honest businesses like yours get the recognition you deserve - 
-                  from real local customers, not bots.
+                  Transform your online reputation with genuine reviews from real local Americans. 
+                  No fake accounts, no bots - just authentic voices that drive real results and sustainable growth.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  Stop Losing Customers Today
+                  Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
                 <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 py-4 text-lg font-medium">
-                  See Real Success Stories
+                  View Success Stories
                 </Button>
               </div>
 
               <div className="flex items-center gap-8 pt-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Businesses Transformed</div>
+                  <div className="text-sm text-muted-foreground">Happy Clients</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">See Growth in Month 1</div>
+                  <div className="text-sm text-muted-foreground">Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">247%</div>
-                  <div className="text-sm text-muted-foreground">Avg Revenue Increase</div>
+                  <div className="text-2xl font-bold text-primary">4.9★</div>
+                  <div className="text-sm text-muted-foreground">Client Rating</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-muted-foreground">Human Support</div>
+                  <div className="text-sm text-muted-foreground">Support</div>
                 </div>
               </div>
             </div>
@@ -200,13 +197,13 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section - More Emotional */}
+      {/* Services Section - 3 Circle Boxes */}
       <section id="services" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
+            <h3 className="text-4xl font-bold mb-6 text-foreground">How We Help Your Business Grow</h3>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              While others promise quick fixes with fake reviews, we deliver lasting growth with real people who actually care about your success
+              Our proven approach combines authentic reviews with smart analytics to deliver sustainable growth for your business
             </p>
           </div>
           
@@ -214,11 +211,11 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
               <CardHeader className="text-center pb-4 flex-1">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Heart className="w-10 h-10 text-primary" />
+                  <Zap className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Built for Your Success, Not Our Profits</CardTitle>
+                <CardTitle className="text-2xl text-foreground mb-3">Completely Customizable</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Every review is personally crafted to showcase what makes your business special. No templates, no copy-paste - just authentic voices that convert visitors into customers.
+                  Every review is carefully crafted to match your business voice and resonate with your target customers
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -228,9 +225,9 @@ const Index = () => {
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Real Neighbors, Real Impact</CardTitle>
+                <CardTitle className="text-2xl text-foreground mb-3">Real Reviewers Near Your Business</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Your reviews come from actual people in your area with established Google accounts and review histories. When Google sees local voices supporting you, your rankings soar.
+                  Genuine reviewers with established accounts and authentic review histories in your local area
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -238,11 +235,11 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
               <CardHeader className="text-center pb-4 flex-1">
                 <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <Target className="w-10 h-10 text-primary" />
+                  <CheckCircle className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground mb-3">Indistinguishable from Organic Growth</CardTitle>
+                <CardTitle className="text-2xl text-foreground mb-3">Identical to Natural Reviews</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground leading-relaxed">
-                  Our strategic timing and authentic approach means Google rewards you instead of penalizing you. Your growth looks completely natural because it is - just accelerated.
+                  Our reviews are indistinguishable from organic ones, ensuring your reputation grows naturally and safely
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -254,30 +251,19 @@ const Index = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6 text-foreground">See Your Growth in Real-Time</h3>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
-              Unlike other services that leave you in the dark, our platform gives you complete transparency. 
-              Track every review, monitor your progress, and watch your business transform before your eyes.
-            </p>
             <AnalyticsDashboard />
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-8">
-              Full transparency means you can see exactly how your investment is paying off. No surprises, no hidden metrics - just clear, measurable growth that you can track 24/7.
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-8">
+              Track your review count changes over time live from us, with full analytics ensuring your business has sustainable growth over time.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Real Reviews Carousel */}
-      <RealReviewsCarousel />
-
-      {/* Our Promise Section - More Emotional */}
+      {/* Our Promise Section - 2x2 Bubbly Boxes */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6 text-foreground">Our Promise: Your Success is Our Obsession</h3>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We don't just deliver reviews - we deliver results that transform businesses and change lives
-            </p>
+            <h3 className="text-4xl font-bold mb-6 text-foreground">Our Promise</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -332,14 +318,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Client Success Stories - More Emotional */}
+      {/* Client Success Stories */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold mb-6 text-foreground">Real Businesses, Real Transformations</h3>
-            <p className="text-xl text-muted-foreground">
-              These aren't just numbers - they're dreams realized, families supported, and businesses saved from closure
-            </p>
+            <h3 className="text-4xl font-bold mb-6 text-foreground">Take a look at how we've improved the businesses of our past clients</h3>
           </div>
           
           <div className="space-y-20">
@@ -529,10 +512,10 @@ const Index = () => {
 
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-8 italic">
-              Client privacy is sacred to us - that's why we protect their identities while sharing their victories.
+              To protect the confidentiality of our clients, we aren't revealing exact names.
             </p>
             <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Your Success Story Starts Today
+              Try it out today, free of charge!
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -577,7 +560,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer - Made Black */}
       <Footer7 logo={{
       url: "#",
       src: "/lovable-uploads/6af8b769-c93d-41dc-b4c2-3f074d0db8bf.png",
