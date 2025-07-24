@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react'
@@ -156,7 +155,7 @@ const EnhancedContactForm: React.FC<ContactFormProps> = ({
                   value={formData.businessUrl}
                   onChange={(e) => handleInputChange('businessUrl', e.target.value)}
                   className="h-14 text-lg bg-background/50 border-2 focus:border-primary transition-all duration-300 rounded-xl"
-                  placeholder="https://business.google.com/..."
+                  placeholder="https://www.google.com/maps/place/"
                   required
                 />
                 <p className="text-sm text-muted-foreground mt-2">
