@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -110,7 +111,7 @@ const Index = () => {
               </button>
             </nav>
             <Button onClick={scrollToTrial} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Get started free
+              Get Started for Free
             </Button>
           </div>
         </div>
@@ -127,7 +128,7 @@ const Index = () => {
                 </Badge>
                 <h2 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Boost your business through 
-                  <span className="text-primary"> authentic reviews</span>
+                  <span className="text-primary"> our automated review system</span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Transform your online reputation with genuine reviews from real local Americans. 
@@ -179,8 +180,8 @@ const Index = () => {
                     <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-foreground">+247%</div>
-                    <div className="text-sm text-muted-foreground">Avg Growth</div>
+                    <div className="text-2xl font-bold text-foreground">+184%</div>
+                    <div className="text-sm text-muted-foreground">Avg Traffic Growth</div>
                   </div>
                 </div>
               </div>
