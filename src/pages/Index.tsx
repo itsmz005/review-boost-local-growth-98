@@ -10,6 +10,7 @@ import { Pricing } from "@/components/ui/pricing";
 import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
 import RealReviewsCarousel from "@/components/RealReviewsCarousel";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -205,7 +206,7 @@ const Index = () => {
             {/* Hero Image */}
             <div className="relative order-1 lg:order-2">
               <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl">
-                <img src="/lovable-uploads/6c7ff13a-4d5e-4885-9696-7682759a4aff.png" alt="US map showing business locations and review network across the west coast" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Long line of customers waiting outside a popular local business" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
               
@@ -366,6 +367,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* New Testimonials Carousel */}
+      <TestimonialsCarousel />
+
       {/* Client Success Stories - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
@@ -397,7 +401,7 @@ const Index = () => {
                   </div>
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-primary">#1</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Google Ranking</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">State Ranking for Elevators</div>
                   </div>
                 </div>
               </div>
@@ -406,8 +410,8 @@ const Index = () => {
                   <CardContent className="p-0">
                     <div className="relative">
                       <img 
-                        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop"
-                        alt="Elevator installation business success story"
+                        src="/lovable-uploads/930ccfef-099d-4707-8d41-382eb0766f15.png"
+                        alt="Modern elevator installation in residential building"
                         className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -444,8 +448,8 @@ const Index = () => {
                   <CardContent className="p-0">
                     <div className="relative">
                       <img 
-                        src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
-                        alt="IT firm business profile success story"
+                        src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop"
+                        alt="Modern IT office with professional team"
                         className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -463,7 +467,7 @@ const Index = () => {
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="text-base lg:text-lg font-bold text-primary">+5-10</div>
+                              <div className="text-base lg:text-lg font-bold text-primary">+100%</div>
                               <div className="text-xs text-muted-foreground">Increase</div>
                             </div>
                           </div>
@@ -486,12 +490,12 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-6 lg:gap-8 pt-3 lg:pt-4">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">5-10</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">100%</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">Growth</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">17.6K</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Monthly Views</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">#1</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">City Ranking for IT Services</div>
                   </div>
                 </div>
               </div>
@@ -508,16 +512,16 @@ const Index = () => {
                   Family Restaurant Chain
                 </div>
                 <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  A local restaurant chain saw their reviews grow from 180 to 450+ across 3 locations. The authentic local reviews helped them outrank established competitors and increase foot traffic by 35% within 6 months of starting our service.
+                  A local restaurant chain saw their reviews grow from 180 to 450+ across 3 locations. The authentic local reviews helped them outrank established competitors and increase foot traffic by 150% within 6 months of starting our service.
                 </p>
                 <div className="flex items-center gap-6 lg:gap-8 pt-3 lg:pt-4">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">35%</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">150%</div>
                     <div className="text-xs sm:text-sm text-muted-foreground">Growth</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">450+</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Total Reviews</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">Top 5</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">City Ranking for Restaurants</div>
                   </div>
                 </div>
               </div>
@@ -526,8 +530,8 @@ const Index = () => {
                   <CardContent className="p-0">
                     <div className="relative">
                       <img 
-                        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop"
-                        alt="Restaurant chain success story"
+                        src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&h=400&fit=crop"
+                        alt="Busy family restaurant with customers dining"
                         className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -545,7 +549,7 @@ const Index = () => {
                               </div>
                             </div>
                             <div className="text-right">
-                              <div className="text-base lg:text-lg font-bold text-primary">+35%</div>
+                              <div className="text-base lg:text-lg font-bold text-primary">+150%</div>
                               <div className="text-xs text-muted-foreground">Increase</div>
                             </div>
                           </div>
