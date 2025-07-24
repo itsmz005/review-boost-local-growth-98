@@ -8,19 +8,95 @@ interface Testimonial {
   id: number;
   quote: string;
   name: string;
-  username: string;
+  business: string;
   avatar: string;
 }
 
 const testimonials: Testimonial[] = [
-  { id: 1, quote: "Accreditry helped us go from 45 reviews to over 200 in just 6 months. Our customer calls increased by 184% and we're now the top-rated auto shop in our area.", name: "Alex Johnson", username: "@alexjohnson", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" },
-  { id: 2, quote: "The reviews look completely natural and helped us build trust with new patients. We've seen a 184% increase in new patient appointments since working with Accreditry.", name: "Maria Garcia", username: "@mariagarcia8", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b742?w=100&h=100&fit=crop&crop=face" },
-  { id: 3, quote: "I was skeptical at first, but the results speak for themselves. From 30 reviews to 180 reviews, and our Google ranking shot up to #1 for 'plumber Denver'. Traffic is up 184%.", name: "Sam Lee", username: "@samlee", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" },
-  { id: 4, quote: "Our restaurant went from unknown to fully booked weekends. The authentic reviews helped us build credibility and now we're one of the top Korean BBQ spots in LA.", name: "Chris Brown", username: "@chrisbrown", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" },
-  { id: 5, quote: "Client inquiries tripled after our review count went from 25 to 150. The reviews are indistinguishable from organic ones and helped establish our firm's reputation.", name: "Pat Smith", username: "@patsmith", avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face" },
-  { id: 6, quote: "Our listing calls increased by 184% after building up our Google reviews. Accreditry's service is professional, reliable, and the results are outstanding.", name: "Jordan Wilson", username: "@jordanwilson", avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face" },
-  { id: 7, quote: "We went from 60 reviews to 300+ in under a year. Our appointment bookings have increased dramatically and we're now the #1 auto service in our city.", name: "Taylor Davis", username: "@taylordavis", avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face" },
-  { id: 8, quote: "The steady flow of authentic reviews has helped us become the most trusted vet clinic in the area. New pet owners constantly mention our reviews when booking.", name: "Casey Miller", username: "@caseymiller", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" },
+  { 
+    id: 1, 
+    quote: "Accreditry helped us go from 45 reviews to over 200 in just 6 months. Our customer calls increased by 184% and we're now the top-rated auto shop in our area.", 
+    name: "Alex J.", 
+    business: "Auto Repair Shop Owner", 
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 2, 
+    quote: "The reviews look completely natural and helped us build trust with new patients. We've seen a 184% increase in new patient appointments since working with Accreditry.", 
+    name: "Maria G.", 
+    business: "Dental Practice Owner", 
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b742?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 3, 
+    quote: "I was skeptical at first, but the results speak for themselves. From 30 reviews to 180 reviews, and our Google ranking shot up to #1 for 'plumber Denver'. Traffic is up 184%.", 
+    name: "Sam L.", 
+    business: "Plumbing Service Owner", 
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 4, 
+    quote: "Our restaurant went from unknown to fully booked weekends. The authentic reviews helped us build credibility and now we're one of the top Korean BBQ spots in LA.", 
+    name: "Chris B.", 
+    business: "Restaurant Owner", 
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 5, 
+    quote: "Client inquiries tripled after our review count went from 25 to 150. The reviews are indistinguishable from organic ones and helped establish our firm's reputation.", 
+    name: "Pat S.", 
+    business: "Law Firm Partner", 
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 6, 
+    quote: "Our listing calls increased by 184% after building up our Google reviews. Accreditry's service is professional, reliable, and the results are outstanding.", 
+    name: "Jordan W.", 
+    business: "Real Estate Agent", 
+    avatar: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 7, 
+    quote: "We went from 60 reviews to 300+ in under a year. Our appointment bookings have increased dramatically and we're now the #1 auto service in our city.", 
+    name: "Taylor D.", 
+    business: "Auto Service Manager", 
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 8, 
+    quote: "The steady flow of authentic reviews has helped us become the most trusted vet clinic in the area. New pet owners constantly mention our reviews when booking.", 
+    name: "Casey M.", 
+    business: "Veterinary Clinic Owner", 
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 9, 
+    quote: "From 15 reviews to 120 in 8 months! Our bakery is now the go-to spot for custom cakes. Weekend orders are booked weeks in advance.", 
+    name: "Riley K.", 
+    business: "Bakery Owner", 
+    avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 10, 
+    quote: "Our fitness studio memberships doubled after improving our online reputation. The reviews showcase our community perfectly and attract serious fitness enthusiasts.", 
+    name: "Morgan R.", 
+    business: "Fitness Studio Owner", 
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 11, 
+    quote: "As a family salon, trust is everything. Going from 40 to 200+ reviews helped us become the neighborhood's favorite. Walk-ins increased by 250%.", 
+    name: "Avery H.", 
+    business: "Hair Salon Owner", 
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b742?w=100&h=100&fit=crop&crop=face" 
+  },
+  { 
+    id: 12, 
+    quote: "Our cleaning service bookings skyrocketed after building up authentic reviews. Clients specifically mention our 5-star rating when calling for estimates.", 
+    name: "Quinn P.", 
+    business: "Cleaning Service Owner", 
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" 
+  }
 ];
 
 const getVisibleCount = (width: number): number => {
@@ -248,7 +324,7 @@ const TestimonialSlider: React.FC = () => {
                           </div>
                           <div className="ml-3">
                             <h4 className="font-bold text-sm sm:text-base text-foreground">{testimonial.name}</h4>
-                            <p className="text-muted-foreground text-xs sm:text-sm">{testimonial.username}</p>
+                            <p className="text-muted-foreground text-xs sm:text-sm">{testimonial.business}</p>
                           </div>
                         </div>
                       </div>
