@@ -72,11 +72,11 @@ const TestimonialsCarousel = () => {
     }
   ];
 
-  // Auto-scroll every 4 seconds
+  // Auto-scroll every 3 seconds with smooth transition
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
@@ -101,7 +101,7 @@ const TestimonialsCarousel = () => {
         </div>
         
         <div className="relative h-[400px] mx-auto max-w-7xl">
-          {/* Auto-scrolling testimonials */}
+          {/* Auto-scrolling testimonials with smooth animations */}
           <div className="absolute inset-0 flex items-center justify-center">
             {getVisibleTestimonials().map((testimonial, i) => {
               const offset = i * 280; // Spacing between cards
@@ -112,12 +112,13 @@ const TestimonialsCarousel = () => {
               return (
                 <div
                   key={`${testimonial.slideIndex}-${currentIndex}`}
-                  className="absolute transition-all duration-1000 ease-in-out"
+                  className="absolute transition-all duration-1000 ease-in-out transform"
                   style={{
                     transform: `translateX(${offset}px) scale(${scale})`,
                     opacity,
                     zIndex,
-                    width: '350px'
+                    width: '350px',
+                    animation: 'smoothSlide 1s ease-in-out'
                   }}
                 >
                   <Testimonial
@@ -127,7 +128,7 @@ const TestimonialsCarousel = () => {
                     testimonial={testimonial.testimonial}
                     rating={testimonial.rating}
                     image={testimonial.image}
-                    className="h-full shadow-xl"
+                    className="h-full shadow-xl hover:shadow-2xl transition-shadow duration-300"
                   />
                 </div>
               );
@@ -144,12 +145,13 @@ const TestimonialsCarousel = () => {
               return (
                 <div
                   key={`duplicate-${testimonial.slideIndex}-${currentIndex}`}
-                  className="absolute transition-all duration-1000 ease-in-out"
+                  className="absolute transition-all duration-1000 ease-in-out transform"
                   style={{
                     transform: `translateX(${offset}px) scale(${scale})`,
                     opacity,
                     zIndex: 1,
-                    width: '350px'
+                    width: '350px',
+                    animation: 'smoothSlide 1s ease-in-out'
                   }}
                 >
                   <Testimonial
@@ -180,6 +182,24 @@ const TestimonialsCarousel = () => {
           ))}
         </div>
       </div>
+      
+      {/* Add custom CSS for smooth scrolling animation */}
+      <style jsx>{`
+        @keyframes smoothSlide {
+          0% {
+            transform: translateX(0px) scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: translateX(-20px) scale(0.98);
+            opacity: 0.9;
+          }
+          100% {
+            transform: translateX(0px) scale(1);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </section>
   );
 };
