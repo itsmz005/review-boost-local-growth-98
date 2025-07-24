@@ -71,7 +71,7 @@ const RealResultsSection = () => {
                 <div className="flex items-center gap-8 pt-4">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary">{result.highlight}</div>
-                    <div className="text-sm text-muted-foreground">More Traffic</div>
+                    <div className="text-sm text-muted-foreground">Growth</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary">{result.metric}</div>
@@ -107,7 +107,7 @@ const RealResultsSection = () => {
                             </div>
                             <div className="text-right">
                               <div className="text-lg font-bold text-primary">+{result.highlight}</div>
-                              <div className="text-xs text-muted-foreground">More Traffic</div>
+                              <div className="text-xs text-muted-foreground">Increase</div>
                             </div>
                           </div>
                         </div>
