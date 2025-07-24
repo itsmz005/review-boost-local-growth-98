@@ -166,10 +166,10 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Hero Image */}
+            {/* Hero Image - US Map with Business Pins */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&h=500&fit=crop" alt="Professional business team helping with review growth" className="w-full h-[500px] object-cover" />
+                <img src="/lovable-uploads/5c882e5f-3e15-43c4-b0d1-d936d10ed91c.png" alt="US map showing real local reviewers across America" className="w-full h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               
@@ -192,6 +192,49 @@ const Index = () => {
                   <Globe className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium text-foreground">Real US Reviewers</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Long-term Relationship Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-4xl font-bold mb-8 text-foreground">Built for Long-Term Success</h3>
+            <div className="text-xl text-muted-foreground leading-relaxed space-y-6">
+              <p>
+                While others promise quick fixes with low-quality, temporary bot reviews that never stick, 
+                we're in the business of building lasting partnerships that drive sustainable growth.
+              </p>
+              <p>
+                We ensure every review delivered comes with a <span className="font-semibold text-primary">30-day warranty</span> and 
+                maximize impact by sourcing exclusively from <span className="font-semibold text-primary">real locals in your area</span>. 
+                Our approach focuses on authentic, long-term reputation building that search engines trust and customers believe.
+              </p>
+            </div>
+            <div className="mt-12 grid md:grid-cols-3 gap-8">
+              <div className="bg-background rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-semibold text-foreground mb-2">30-Day Warranty</h4>
+                <p className="text-muted-foreground">Every review is backed by our guarantee for lasting results</p>
+              </div>
+              <div className="bg-background rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Real Local Reviewers</h4>
+                <p className="text-muted-foreground">Authentic voices from your community, not bots or fake accounts</p>
+              </div>
+              <div className="bg-background rounded-2xl p-6 shadow-lg border border-border/50">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Sustainable Growth</h4>
+                <p className="text-muted-foreground">Long-term reputation building that search engines trust</p>
               </div>
             </div>
           </div>
