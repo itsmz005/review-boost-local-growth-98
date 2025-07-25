@@ -120,7 +120,10 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src="/lovable-uploads/ec922bb9-3fa0-4905-b611-5031727c878a.png"
+                src={isDarkMode 
+                  ? "https://media.discordapp.net/attachments/996663635860525057/1398332562811785286/Accreditry-W.png?ex=6884fa2e&is=6883a8ae&hm=22ee1be659668b80ecffa9c3e2157ba02b2ca713191e85c362620740b16708f2&=&format=webp&quality=lossless&width=1938&height=432"
+                  : "https://media.discordapp.net/attachments/996663635860525057/1398332562530893845/Accreditry.png?ex=6884fa2e&is=6883a8ae&hm=677aac220a4114c6a23bc2be0693c99b947195118d23fe0f5da606f1222948e2&=&format=webp&quality=lossless&width=1938&height=432"
+                }
                 alt="Accreditry Logo" 
                 className="h-5 sm:h-6 w-auto" 
               />
@@ -141,7 +144,7 @@ const Index = () => {
 
             {/* Desktop CTA Button */}
             <Button onClick={scrollToTrial} className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-4 lg:px-6 py-2 lg:py-3 text-sm lg:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Get Started for Free
+              Claim my Free Review
             </Button>
 
             {/* Mobile menu button */}
@@ -167,7 +170,7 @@ const Index = () => {
                   FAQ
                 </button>
                 <Button onClick={scrollToTrial} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mt-4">
-                  Get Started for Free
+                  Claim my Free Review
                 </Button>
               </nav>
             </div>
@@ -236,8 +239,8 @@ const Index = () => {
             </div>
             
             {/* Hero Image */}
-            <div className="relative order-1 lg:order-2">
-              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative order-1 lg:order-2 flex justify-center">
+              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl max-w-lg w-full">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Long line of customers waiting outside a popular local business" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
