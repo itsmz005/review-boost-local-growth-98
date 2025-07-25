@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, ChevronLeft, ChevronRight, Quote, MapPin } from 'lucide-react';
+
 const RealReviewsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -55,9 +57,11 @@ const RealReviewsCarousel = () => {
     date: "2 months ago",
     business: "Home Services"
   }];
+
   const nextReview = () => {
     setCurrentIndex(prev => (prev + 1) % realReviews.length);
   };
+
   const prevReview = () => {
     setCurrentIndex(prev => (prev - 1 + realReviews.length) % realReviews.length);
   };
@@ -67,7 +71,97 @@ const RealReviewsCarousel = () => {
     const interval = setInterval(nextReview, 5000);
     return () => clearInterval(interval);
   }, []);
+
   const currentReview = realReviews[currentIndex];
-  return;
+
+  return (
+    <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 lg:mb-16">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">
+            Real Reviews from Real Clients
+          </h3>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Don't just take our word for it - hear from businesses that have transformed their online presence with our authentic review system
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl">
+            <CardContent className="p-6 lg:p-8">
+              <div className="flex items-start gap-4 mb-6">
+                <Quote className="w-8 h-8 text-primary/60 flex-shrink-0 mt-1" />
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-1">
+                      {[...Array(currentReview.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-sm text-muted-foreground">
+                      {currentReview.date}
+                    </span>
+                  </div>
+                  
+                  <p className="text-lg text-foreground leading-relaxed mb-4">
+                    {currentReview.text}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-semibold text-foreground">
+                        {currentReview.reviewer}
+                      </div>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <MapPin className="w-4 h-4" />
+                        {currentReview.location}
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-medium text-primary">
+                        {currentReview.business}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={prevReview}
+                  className="rounded-full w-10 h-10 p-0"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </Button>
+
+                <div className="flex items-center gap-2">
+                  {realReviews.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentIndex ? 'bg-primary' : 'bg-border'
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={nextReview}
+                  className="rounded-full w-10 h-10 p-0"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default RealReviewsCarousel;
