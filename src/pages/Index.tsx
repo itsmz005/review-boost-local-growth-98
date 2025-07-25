@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +15,24 @@ import { Footerdemo } from "@/components/ui/footer-section";
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  // Sync with system theme and footer theme changes
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    // Initial check
+    setIsDarkMode(document.documentElement.classList.contains('dark'));
+
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToTrial = () => {
     const trialElement = document.getElementById('free-trial');
@@ -102,10 +119,11 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <picture>
-                <source media="(prefers-color-scheme: dark)" srcSet="/lovable-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" />
-                <img src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-5 sm:h-6 w-auto" />
-              </picture>
+              <img 
+                src={isDarkMode ? "/lovable-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" : "/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png"} 
+                alt="Accreditry Logo" 
+                className="h-5 sm:h-6 w-auto" 
+              />
             </div>
             
             {/* Desktop Navigation */}
