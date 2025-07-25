@@ -442,7 +442,7 @@ const Index = () => {
                   <CardContent className="p-0">
                     <div className="relative">
                       <img 
-                        src="/accreditry-uploads/930ccfef-099d-4707-8d41-382eb0766f15.png"
+                        src="https://lh3.googleusercontent.com/p/AF1QipOhZtszNKeu9g8zelVewC8Sl4ewfo6CxOAu9_bs=s1360-w1360-h1020-rw"
                         alt="Modern elevator installation in residential building"
                         className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
