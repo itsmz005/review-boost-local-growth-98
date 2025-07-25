@@ -120,7 +120,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src={isDarkMode ? "https://media.discordapp.net/attachments/996663635860525057/1398332562811785286/Accreditry-W.png?ex=6884fa2e&is=6883a8ae&hm=22ee1be659668b80ecffa9c3e2157ba02b2ca713191e85c362620740b16708f2&=&format=webp&quality=lossless&width=1938&height=432" : "https://media.discordapp.net/attachments/996663635860525057/1398332562530893845/Accreditry.png?ex=6884fa2e&is=6883a8ae&hm=677aac220a4114c6a23bc2be0693c99b947195118d23fe0f5da606f1222948e2&=&format=webp&quality=lossless&width=1938&height=432"}
+                src="/lovable-uploads/ec922bb9-3fa0-4905-b611-5031727c878a.png"
                 alt="Accreditry Logo" 
                 className="h-5 sm:h-6 w-auto" 
               />
@@ -236,18 +236,10 @@ const Index = () => {
             </div>
             
             {/* Hero Image */}
-            <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl max-w-md lg:max-w-none">
-                <img src="/lovable-uploads/9bed81b7-e88d-4a48-b20e-ebe143e8da0c.png" alt="Business professionals discussing reviews" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
+            <div className="relative order-1 lg:order-2">
+              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Long line of customers waiting outside a popular local business" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                
-                {/* Real US Reviewers Badge */}
-                <div className="absolute top-4 right-4 bg-background/95 backdrop-blur-sm rounded-xl px-3 py-2 shadow-lg border border-border/50">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-primary rounded-full"></div>
-                    <span className="text-sm font-medium text-foreground">Real US Reviewers</span>
-                  </div>
-                </div>
               </div>
               
               {/* Floating Stats Card */}
@@ -260,6 +252,14 @@ const Index = () => {
                     <div className="text-xl lg:text-2xl font-bold text-foreground">+184%</div>
                     <div className="text-xs lg:text-sm text-muted-foreground">Avg Growth</div>
                   </div>
+                </div>
+              </div>
+
+              {/* Trust Badges */}
+              <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 bg-background rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-xl border-2 border-primary/20">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
+                  <span className="text-xs lg:text-sm font-medium text-foreground">Real US Reviewers</span>
                 </div>
               </div>
             </div>
