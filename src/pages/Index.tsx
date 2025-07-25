@@ -116,7 +116,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header section */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
@@ -177,60 +177,60 @@ const Index = () => {
 
       {/* Hero Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
-              <div className="space-y-4 lg:space-y-6">
-                <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base font-medium w-fit">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 lg:space-y-10 order-2 lg:order-1">
+              <div className="space-y-6 lg:space-y-8">
+                <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-fit">
                   🚀 Trusted by over 500 businesses who've seen a significant increase in traffic
                 </Badge>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight">
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
                   Stop Losing Customers to 
                   <span className="text-primary"> Better-Reviewed Competitors</span>
                 </h2>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
+                <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
                   Our automated review system helps honest businesses like yours get the recognition you deserve - from real local customers, not bots.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
+              <div className="flex flex-col gap-4 sm:gap-6">
+                <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
                   Claim my free review
-                  <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                  <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium w-full sm:w-auto">
+                <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-medium w-full sm:w-auto">
                   See Real Success Stories
                 </Button>
               </div>
 
-              <div className="flex justify-center gap-8 lg:gap-12 pt-4">
+              <div className="flex justify-center gap-8 lg:gap-12 pt-6 lg:pt-8">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                    <Building className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <Building className="w-7 h-7 text-primary" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Businesses</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">500+</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Businesses</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                    <TrendingUp className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <TrendingUp className="w-7 h-7 text-primary" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Month 1 Growth</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">98%</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Month 1 Growth</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                    <BarChart3 className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <BarChart3 className="w-7 h-7 text-primary" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">184%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Traffic Increase</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">184%</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Traffic Increase</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
-                    <Users className="w-6 h-6 text-primary" />
+                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <Users className="w-7 h-7 text-primary" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Support</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">24/7</div>
+                  <div className="text-sm sm:text-base text-muted-foreground">Support</div>
                 </div>
               </div>
             </div>
@@ -269,7 +269,7 @@ const Index = () => {
 
       {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -319,7 +319,7 @@ const Index = () => {
 
       {/* Analytics Dashboard Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">See Your Growth in Real-Time</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 lg:mb-8">
@@ -336,7 +336,7 @@ const Index = () => {
 
       {/* Our Promise Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Our Promise: Your Success is Our Obsession</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -401,7 +401,7 @@ const Index = () => {
 
       {/* Client Success Stories - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Real Businesses, Real Transformations</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -608,7 +608,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Frequently Asked Questions</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -640,7 +640,7 @@ const Index = () => {
 
       {/* Free Trial Form */}
       <section id="free-trial" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <EnhancedContactForm />
         </div>
       </section>
