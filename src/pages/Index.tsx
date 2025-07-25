@@ -175,25 +175,25 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section - More Emotional */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-8 lg:space-y-10 order-2 lg:order-1">
+      {/* Hero Section - Smaller and More Spacious */}
+      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-background via-muted/20 to-background">
+        <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="space-y-10 lg:space-y-12 order-2 lg:order-1">
               <div className="space-y-6 lg:space-y-8">
                 <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-fit">
-                  🚀 Trusted by over 500 businesses who've seen a significant increase in traffic
+                  Trusted by over 500 businesses who've seen a significant increase in traffic
                 </Badge>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
                   Stop Losing Customers to 
                   <span className="text-primary"> Better-Reviewed Competitors</span>
                 </h2>
-                <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                   Our automated review system helps honest businesses like yours get the recognition you deserve - from real local customers, not bots.
                 </p>
               </div>
               
-              <div className="flex flex-col gap-4 sm:gap-6">
+              <div className="flex flex-col gap-4 sm:gap-5">
                 <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
                   Claim my free review
                   <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
@@ -203,34 +203,34 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="flex justify-center gap-8 lg:gap-12 pt-6 lg:pt-8">
+              <div className="flex justify-center gap-8 lg:gap-12 pt-8 lg:pt-12">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <Building className="w-7 h-7 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <Building className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">500+</div>
-                  <div className="text-sm sm:text-base text-muted-foreground">Businesses</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
+                  <div className="text-sm text-muted-foreground">Businesses</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <TrendingUp className="w-7 h-7 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">98%</div>
-                  <div className="text-sm sm:text-base text-muted-foreground">Month 1 Growth</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
+                  <div className="text-sm text-muted-foreground">Month 1 Growth</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <BarChart3 className="w-7 h-7 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <BarChart3 className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">184%</div>
-                  <div className="text-sm sm:text-base text-muted-foreground">Traffic Increase</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">184%</div>
+                  <div className="text-sm text-muted-foreground">Traffic Increase</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <Users className="w-7 h-7 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                    <Users className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">24/7</div>
-                  <div className="text-sm sm:text-base text-muted-foreground">Support</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
+                  <div className="text-sm text-muted-foreground">Support</div>
                 </div>
               </div>
             </div>
