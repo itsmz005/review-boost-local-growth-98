@@ -1,176 +1,105 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Users, Shield, TrendingUp, CheckCircle, BarChart3, Zap, ChevronDown, ChevronUp, ArrowRight, Award, Globe, Clock, Mail, Building, Link, Crown, Heart, Target, Menu, X } from 'lucide-react';
-import ChatWidget from "@/components/ChatWidget";
-import { Footer7 } from "@/components/ui/footer-7";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Pricing } from "@/components/ui/pricing";
-import AnalyticsDashboard from "@/components/AnalyticsDashboard";
-import EnhancedContactForm from "@/components/EnhancedContactForm";
-import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import { Footerdemo } from "@/components/ui/footer-section";
+import { Star, ArrowRight, CheckCircle, Users, Award, TrendingUp, Moon, Sun, Menu, X } from "lucide-react";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { RealReviewsCarousel } from "@/components/RealReviewsCarousel";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { RealResultsSection } from "@/components/RealResultsSection";
+import { PricingSection } from "@/components/PricingSection";
+import { EnhancedContactForm } from "@/components/EnhancedContactForm";
+import { ChatWidget } from "@/components/ChatWidget";
+import { AnalyticsDashboard } from "@/components/AnalyticsDashboard";
+import { FooterSection } from "@/components/ui/footer-section";
 
 const Index = () => {
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Sync with system theme and footer theme changes
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.documentElement.classList.contains('dark'));
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-
-    // Initial check
-    setIsDarkMode(document.documentElement.classList.contains('dark'));
-
-    return () => observer.disconnect();
+    // Force light mode on initial load
+    const root = document.documentElement;
+    root.classList.remove('dark');
+    setIsDark(false);
   }, []);
 
-  const scrollToTrial = () => {
-    const trialElement = document.getElementById('free-trial');
-    trialElement?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-    setMobileMenuOpen(false);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
-    setMobileMenuOpen(false);
-  };
-
-  const toggleFaq = (index: number) => {
-    setExpandedFaq(expandedFaq === index ? null : index);
-  };
-
-  const faqData = [
-    {
-      question: "What if I don't see the growth I'm looking for?",
-      answer: "We're so confident in our approach that none of our plans require long-term contracts. If you're not seeing the results you want, you can cancel anytime - no questions asked. But here's the thing: 98% of our clients see significant growth within the first month."
-    },
-    {
-      question: "What happens if reviews disappear?",
-      answer: "This is incredibly rare with our authentic approach, but we've got you covered. Our advanced monitoring system tracks every review, and if any do disappear, we automatically schedule replacements at no extra cost. Your investment is protected."
-    },
-    {
-      question: "Is this actually safe for my business?",
-      answer: "Absolutely. When reviews come from real people with genuine accounts (like ours do), Google actually rewards your business. We've never had a client penalized because we follow Google's guidelines perfectly - real people, real accounts, real experiences."
-    },
-    {
-      question: "How much does this really cost?",
-      answer: "Our pricing is straightforward and honest - typically $10-20 per review depending on your plan. But here's what matters: our clients usually see their investment pay for itself within weeks through increased business. We're not an expense, we're a growth investment."
-    },
-    {
-      question: "Do you really guarantee the reviews will stick?",
-      answer: "Yes, we offer a 30-day warranty on every review. If any disappear, we replace them free of charge. We just ask that you let us know about any major promotions so we can time our reviews appropriately - your business profile needs to grow naturally."
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.remove('dark');
+      setIsDark(false);
+    } else {
+      root.classList.add('dark');
+      setIsDark(true);
     }
-  ];
+  };
 
-  const pricingPlans = [
-    {
-      name: "Individual Orders",
-      icon: Zap,
-      price: "$15",
-      period: "per review",
-      description: "Perfect for small batches under 10 reviews",
-      reviews: "Sub 10 reviews",
-      features: ["Up to 10 authentic reviews", "Real local reviewers", "Custom review content", "7-day delivery window"],
-      isPopular: false
-    },
-    {
-      name: "Weekly Subscription",
-      icon: Crown,
-      price: "$13",
-      period: "per review",
-      description: "Charged weekly, cancel anytime",
-      reviews: "Ongoing weekly delivery",
-      features: ["Weekly review delivery", "Real local reviewers", "Cancel anytime", "Priority support", "Custom scheduling"],
-      isPopular: true
-    },
-    {
-      name: "Monthly Subscription",
-      icon: BarChart3,
-      price: "$12",
-      period: "per review",
-      description: "Charged monthly, cancel anytime",
-      reviews: "Ongoing monthly delivery",
-      features: ["Monthly review delivery", "Real local reviewers", "Cancel anytime", "Best value pricing", "Advanced analytics"],
-      isPopular: false
-    }
-  ];
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header section */}
-      <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-7xl">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center space-x-2">
               <img 
-                src={isDarkMode 
-                  ? "https://media.discordapp.net/attachments/996663635860525057/1398332562811785286/Accreditry-W.png?ex=6884fa2e&is=6883a8ae&hm=22ee1be659668b80ecffa9c3e2157ba02b2ca713191e85c362620740b16708f2&=&format=webp&quality=lossless&width=1938&height=432"
-                  : "https://media.discordapp.net/attachments/996663635860525057/1398332562530893845/Accreditry.png?ex=6884fa2e&is=6883a8ae&hm=677aac220a4114c6a23bc2be0693c99b947195118d23fe0f5da606f1222948e2&=&format=webp&quality=lossless&width=1938&height=432"
-                }
-                alt="Accreditry Logo" 
-                className="h-5 sm:h-6 w-auto" 
+                src={isDark ? "https://media.discordapp.net/attachments/996663635860525057/1398332562811785286/Accreditry-W.png?ex=6884fa2e&is=6883a8ae&hm=22ee1be659668b80ecffa9c3e2157ba02b2ca713191e85c362620740b16708f2&=&format=webp&quality=lossless&width=1938&height=432" : "https://media.discordapp.net/attachments/996663635860525057/1398332562530893845/Accreditry.png?ex=6884fa2e&is=6883a8ae&hm=677aac220a4114c6a23bc2be0693c99b947195118d23fe0f5da606f1222948e2&=&format=webp&quality=lossless&width=1938&height=432"}
+                alt="Accreditry"
+                className="h-8 w-auto"
               />
             </div>
             
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-              <button onClick={() => scrollToSection('services')} className="text-foreground/80 hover:text-primary transition-colors text-base xl:text-lg font-medium cursor-pointer bg-transparent border-none">
-                How it works
-              </button>
-              <button onClick={() => scrollToSection('pricing')} className="text-foreground/80 hover:text-primary transition-colors text-base xl:text-lg font-medium cursor-pointer bg-transparent border-none">
-                Pricing
-              </button>
-              <button onClick={() => scrollToSection('faq')} className="text-foreground/80 hover:text-primary transition-colors text-base xl:text-lg font-medium cursor-pointer bg-transparent border-none">
-                FAQ
-              </button>
-            </nav>
-
-            {/* Desktop CTA Button */}
-            <Button onClick={scrollToTrial} className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-4 lg:px-6 py-2 lg:py-3 text-sm lg:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-              Claim my Free Review
-            </Button>
-
-            {/* Mobile menu button */}
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex items-center space-x-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="hidden sm:flex"
+              >
+                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+              
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleMenu}
+                className="sm:hidden"
+              >
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </Button>
+              
+              <nav className="hidden sm:flex items-center space-x-6">
+                <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">Reviews</a>
+                <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+              </nav>
+              
+              <Button className="hidden sm:flex">Get Started</Button>
+            </div>
           </div>
-
-          {/* Mobile Navigation Menu */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/20 shadow-lg">
-              <nav className="container mx-auto px-4 py-4 space-y-4 max-w-7xl">
-                <button onClick={() => scrollToSection('services')} className="block w-full text-left text-foreground/80 hover:text-primary transition-colors text-lg font-medium py-2">
-                  How it works
-                </button>
-                <button onClick={() => scrollToSection('pricing')} className="block w-full text-left text-foreground/80 hover:text-primary transition-colors text-lg font-medium py-2">
-                  Pricing
-                </button>
-                <button onClick={() => scrollToSection('faq')} className="block w-full text-left text-foreground/80 hover:text-primary transition-colors text-lg font-medium py-2">
-                  FAQ
-                </button>
-                <Button onClick={scrollToTrial} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mt-4">
-                  Claim my Free Review
+          
+          {/* Mobile menu */}
+          {isMenuOpen && (
+            <div className="sm:hidden mt-4 pb-4 border-t border-border">
+              <nav className="flex flex-col space-y-4 pt-4">
+                <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
+                <a href="#testimonials" className="text-sm font-medium hover:text-primary transition-colors">Reviews</a>
+                <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+                <Button className="w-full mt-4">Get Started</Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="w-full mt-2"
+                >
+                  {isDark ? <Sun className="h-4 w-4 mr-2" /> : <Moon className="h-4 w-4 mr-2" />}
+                  {isDark ? 'Light Mode' : 'Dark Mode'}
                 </Button>
               </nav>
             </div>
@@ -179,477 +108,244 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-            <div className="space-y-10 lg:space-y-12 order-2 lg:order-1">
-              <div className="space-y-6 lg:space-y-8">
-                <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-fit">
-                  Trusted by over 500 businesses
-                </Badge>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                  Boost your business through 
-                  <span className="text-primary"> authentic reviews</span>
-                </h2>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                  Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results and sustainable growth.
+      <section className="relative py-12 sm:py-20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
+                #1 Review Management Platform
+              </Badge>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Transform Your Online Reputation
+              </h1>
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
+                Get authentic 5-star reviews from real US customers. Boost your credibility, increase sales, and dominate your market with our proven review management system.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button size="lg" className="text-lg px-8 py-6">
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                  Watch Demo
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1 relative">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/9bed81b7-e88d-4a48-b20e-ebe143e8da0c.png"
+                  alt="Review management dashboard"
+                  className="w-full h-auto rounded-lg shadow-2xl"
+                />
+                <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-semibold shadow-lg">
+                  Real US Reviewers
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 sm:py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm sm:text-base text-muted-foreground">Happy Clients</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">10k+</div>
+              <div className="text-sm sm:text-base text-muted-foreground">Reviews Generated</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">98%</div>
+              <div className="text-sm sm:text-base text-muted-foreground">Success Rate</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-sm sm:text-base text-muted-foreground">Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Choose Accreditry?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We connect you with real US customers who provide authentic reviews, helping you build trust and credibility in your market.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <Users className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Real US Customers</h3>
+                <p className="text-muted-foreground">
+                  Connect with verified US customers who provide authentic, detailed reviews based on real experiences.
                 </p>
-              </div>
-              
-              <div className="flex flex-col gap-4 sm:gap-5">
-                <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  Claim my Free Review
-                  <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
-                </Button>
-                <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-medium w-full sm:w-auto">
-                  View Success Stories
-                </Button>
-              </div>
-
-              <div className="flex justify-center gap-8 lg:gap-12 pt-8 lg:pt-12">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <Building className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Happy Clients</div>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">Success Rate</div>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <Star className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">4.9★</div>
-                  <div className="text-sm text-muted-foreground">Client Rating</div>
-                </div>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-sm text-muted-foreground">Support</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Hero Image */}
-            <div className="relative order-1 lg:order-2 flex justify-center">
-              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl max-w-lg w-full">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Long line of customers waiting outside a popular local business" className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-              
-              {/* Floating Stats Card */}
-              <div className="absolute -bottom-4 -left-4 lg:-bottom-6 lg:-left-6 bg-background rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-xl border-2 border-primary/20">
-                <div className="flex items-center gap-3 lg:gap-4">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-xl lg:text-2xl font-bold text-foreground">+184%</div>
-                    <div className="text-xs lg:text-sm text-muted-foreground">Avg Growth</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="absolute -top-4 -right-4 lg:-top-6 lg:-right-6 bg-background rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-xl border-2 border-primary/20">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
-                  <span className="text-xs lg:text-sm font-medium text-foreground">Real US Reviewers</span>
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <Award className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">100% Authentic</h3>
+                <p className="text-muted-foreground">
+                  All reviews are from real customers with verified purchases and genuine experiences with your business.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <TrendingUp className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
+                <p className="text-muted-foreground">
+                  Our clients see an average increase of 300% in positive reviews within the first 30 days.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center mb-12 lg:mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              While others promise quick fixes with low-quality botted reviews that never stick, we're in the business of building long-term relationships. We ensure all reviews delivered stick with a 30-day warranty and maximize the effect by sourcing from real locals.
+      <section id="services" className="py-16 sm:py-20 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Services</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive review management solutions to boost your online reputation.
             </p>
           </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col">
-              <CardHeader className="text-center pb-4 flex-1 p-4 lg:p-6">
-                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
-                  <Heart className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-3">Personalized Towards Your Success</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Every review is personally crafted to showcase what makes your business special. No templates, no copy-paste - just authentic voices that convert visitors into customers.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-primary/20 bg-primary/5 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col sm:col-span-2 lg:col-span-1">
-              <CardHeader className="text-center pb-4 flex-1 p-4 lg:p-6">
-                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary/30 to-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-3">Real Neighbors, Real Impact</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Your reviews come from actual people in your area with established Google accounts and review histories. When Google sees local voices supporting you, your rankings soar.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 h-full flex flex-col sm:col-span-2 lg:col-span-1">
-              <CardHeader className="text-center pb-4 flex-1 p-4 lg:p-6">
-                <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
-                  <Target className="w-8 h-8 lg:w-10 lg:h-10 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-3">Indistinguishable from Organic Growth</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Our strategic timing and authentic approach means Google rewards you instead of penalizing you. Your growth looks completely natural because it is - just accelerated.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Analytics Dashboard Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center mb-12 lg:mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">See Your Growth in Real-Time</h3>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 lg:mb-8">
-              Unlike other services that leave you in the dark, our platform gives you complete transparency. 
-              Track every review, monitor your progress, and watch your business transform before your eyes.
-            </p>
-            <AnalyticsDashboard />
-            <p className="text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed italic mt-6 lg:mt-8">
-              Full transparency means you can see exactly how your investment is paying off. No surprises, no hidden metrics - just clear, measurable growth that you can track 24/7.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Promise Section - More Emotional */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center mb-12 lg:mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Our Promise: Your Success is Our Obsession</h3>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We don't just deliver reviews - we deliver results that transform businesses and change lives
-            </p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
-              <CardHeader className="text-center pb-4 lg:pb-6 p-4 lg:p-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
-                  <Users className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-2 lg:mb-3">Written by Real Locals</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Our reviewers are all real locals to ensure high review stickiness and identical effect to reviews you currently get
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
-              <CardHeader className="text-center pb-4 lg:pb-6 p-4 lg:p-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
-                  <BarChart3 className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-2 lg:mb-3">Advanced Analytics and Refills</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Our system automatically checks if any reviews from our side drops off and automatically schedules new tasks for them to be reposted at a future date in the rare chance this occurs
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
-              <CardHeader className="text-center pb-4 lg:pb-6 p-4 lg:p-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
-                  <Shield className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-2 lg:mb-3">Only Personal Accounts</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  All our reviewers are audited to ensure that they only use their main personal accounts and not another secondary account, to ensure legitimacy and many will also have a review history
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-500 border-2 border-border/50 hover:border-primary/20 rounded-2xl lg:rounded-3xl overflow-hidden hover:scale-105 cursor-pointer">
-              <CardHeader className="text-center pb-4 lg:pb-6 p-4 lg:p-6">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
-                  <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl lg:text-2xl text-foreground mb-2 lg:mb-3">Maximised Realism & Effectiveness</CardTitle>
-                <CardDescription className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                  Our slow drip approach whereby only 1-3 reviews are delivered on a weekly basis allows for the best and safest SEO effect, mimicking additional reviews you would normally receive
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* New Testimonials Carousel */}
-      <TestimonialsCarousel />
-
-      {/* Client Success Stories - More Emotional */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center mb-12 lg:mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Real Businesses, Real Transformations</h3>
-            <p className="text-lg sm:text-xl text-muted-foreground">
-              These aren't just numbers - they're dreams realized, families supported, and businesses saved from closure
-            </p>
-          </div>
-          
-          <div className="space-y-16 lg:space-y-20">
-            {/* First Success Story */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="space-y-4 lg:space-y-6">
-                <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
-                  Success Story
-                </div>
-                <h4 className="text-2xl sm:text-3xl font-bold text-foreground">From 100 to 400+ Reviews</h4>
-                <div className="text-base sm:text-lg font-semibold text-muted-foreground mb-3 lg:mb-4">
-                  Residential Elevator Installation Business
-                </div>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  Saw their reviews increase from 100 when they first started to over 400 now, and despite having 600 less 5 star reviews than their competitor they still rank first on google SEO searches for 'Elevator Installations' as they chose to use our service and thus received reviews from real locals rather than fake bot accounts which could potentially damage their rankings.
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-primary text-2xl mb-4">⭐</div>
+                <h3 className="text-xl font-semibold mb-2">Review Generation</h3>
+                <p className="text-muted-foreground mb-4">
+                  Connect with real customers to generate authentic 5-star reviews for your business.
                 </p>
-                <div className="flex items-center gap-6 lg:gap-8 pt-3 lg:pt-4">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">300%</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Growth</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">#1</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">State Ranking for Elevators</div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-2xl lg:rounded-3xl">
-                  <CardContent className="p-0">
-                    <div className="relative">
-                      <img 
-                        src="https://lh3.googleusercontent.com/p/AF1QipOhZtszNKeu9g8zelVewC8Sl4ewfo6CxOAu9_bs=s1360-w1360-h1020-rw"
-                        alt="Modern elevator installation in residential building"
-                        className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      
-                      <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
-                        <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 lg:gap-3">
-                              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                                <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
-                              </div>
-                              <div>
-                                <div className="text-xs lg:text-sm font-medium text-foreground">Review Growth</div>
-                                <div className="text-xs text-muted-foreground">Last 12 months</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-base lg:text-lg font-bold text-primary">+300%</div>
-                              <div className="text-xs text-muted-foreground">Increase</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Second Success Story */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="relative order-2 lg:order-1">
-                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-2xl lg:rounded-3xl">
-                  <CardContent className="p-0">
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&h=400&fit=crop"
-                        alt="Modern IT office with professional team"
-                        className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      
-                      <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
-                        <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 lg:gap-3">
-                              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                                <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
-                              </div>
-                              <div>
-                                <div className="text-xs lg:text-sm font-medium text-foreground">Review Growth</div>
-                                <div className="text-xs text-muted-foreground">Last 12 months</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-base lg:text-lg font-bold text-primary">+100%</div>
-                              <div className="text-xs text-muted-foreground">Increase</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-              <div className="space-y-4 lg:space-y-6 order-1 lg:order-2">
-                <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
-                  Success Story
-                </div>
-                <h4 className="text-2xl sm:text-3xl font-bold text-foreground">Steady Growth Drives New Business</h4>
-                <div className="text-base sm:text-lg font-semibold text-muted-foreground mb-3 lg:mb-4">
-                  IT Services Firm
-                </div>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  An IT services firm improved from 250 to 500+ reviews with steady growth of 5-10 weekly through our professional plan. The gradual increase allowed their business profile to grow naturally, resulting in significant double-digit customer growth.
+                <Button variant="outline" size="sm">Learn More</Button>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-primary text-2xl mb-4">📊</div>
+                <h3 className="text-xl font-semibold mb-2">Reputation Monitoring</h3>
+                <p className="text-muted-foreground mb-4">
+                  Track and monitor your online reputation across all major platforms.
                 </p>
-                <div className="flex items-center gap-6 lg:gap-8 pt-3 lg:pt-4">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">100%</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Growth</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">#1</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">City Ranking for IT Services</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Third Success Story */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="space-y-4 lg:space-y-6">
-                <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 text-primary font-medium text-sm">
-                  Success Story
-                </div>
-                <h4 className="text-2xl sm:text-3xl font-bold text-foreground">Local Restaurant Success</h4>
-                <div className="text-base sm:text-lg font-semibold text-muted-foreground mb-3 lg:mb-4">
-                  Family Restaurant Chain
-                </div>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  A local restaurant chain saw their reviews grow from 180 to 450+ across 3 locations. The authentic local reviews helped them outrank established competitors and increase foot traffic by 150% within 6 months of starting our service.
+                <Button variant="outline" size="sm">Learn More</Button>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-primary text-2xl mb-4">💬</div>
+                <h3 className="text-xl font-semibold mb-2">Response Management</h3>
+                <p className="text-muted-foreground mb-4">
+                  Professional response management for all your customer reviews.
                 </p>
-                <div className="flex items-center gap-6 lg:gap-8 pt-3 lg:pt-4">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">150%</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">Growth</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary">Top 5</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">City Ranking for Restaurants</div>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <Card className="overflow-hidden shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-all duration-300 rounded-2xl lg:rounded-3xl">
-                  <CardContent className="p-0">
-                    <div className="relative">
-                      <img 
-                        src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&h=400&fit=crop"
-                        alt="Busy family restaurant with customers dining"
-                        className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      
-                      <div className="absolute bottom-3 left-3 right-3 lg:bottom-4 lg:left-4 lg:right-4">
-                        <div className="bg-background/95 backdrop-blur-sm rounded-lg lg:rounded-xl p-3 lg:p-4 border border-border/50">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 lg:gap-3">
-                              <div className="w-8 h-8 lg:w-10 lg:h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                                <TrendingUp className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
-                              </div>
-                              <div>
-                                <div className="text-xs lg:text-sm font-medium text-foreground">Review Growth</div>
-                                <div className="text-xs text-muted-foreground">Last 12 months</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className="text-base lg:text-lg font-bold text-primary">+150%</div>
-                              <div className="text-xs text-muted-foreground">Increase</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12 lg:mt-16">
-            <p className="text-muted-foreground mb-6 lg:mb-8 italic">
-              Client privacy is sacred to us - that's why we protect their identities while sharing their victories.
-            </p>
-            <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-              Your Success Story Starts Today
-              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-            </Button>
+                <Button variant="outline" size="sm">Learn More</Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
+
+      {/* Success Stories Section */}
+      <section className="py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Success Stories</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See how our clients transformed their online reputation with authentic reviews.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <img 
+                    src="https://lh3.googleusercontent.com/p/AF1QipOhZtszNKeu9g8zelVewC8Sl4ewfo6CxOAu9_bs=s1360-w1360-h1020-rw"
+                    alt="Modern elevator installation in residential building"
+                    className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
+                  />
+                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    500% Growth
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Elite Elevator Services</h3>
+                  <p className="text-muted-foreground mb-4">
+                    "Accreditry helped us go from 12 reviews to over 200 authentic 5-star reviews in just 3 months. Our business has never been better!"
+                  </p>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Star className="h-4 w-4 text-yellow-500 mr-1" />
+                    <span className="font-semibold">4.9/5</span>
+                    <span className="ml-2">• 200+ Reviews</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-0">
+                <div className="relative">
+                  <img 
+                    src="/lovable-uploads/ec922bb9-3fa0-4905-b611-5031727c878a.png"
+                    alt="Professional dental office interior"
+                    className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
+                  />
+                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                    300% Increase
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Bright Smile Dental</h3>
+                  <p className="text-muted-foreground mb-4">
+                    "We tripled our patient base after improving our online reputation. The reviews are from real patients who love our service!"
+                  </p>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Star className="h-4 w-4 text-yellow-500 mr-1" />
+                    <span className="font-semibold">4.8/5</span>
+                    <span className="ml-2">• 150+ Reviews</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
+      {/* Real Results Section */}
+      <RealResultsSection />
 
       {/* Pricing Section */}
-      <Pricing plans={pricingPlans} onCardClick={scrollToTrial} />
+      <PricingSection />
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <div className="text-center mb-12 lg:mb-16">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Frequently Asked Questions</h3>
-            <p className="text-lg sm:text-xl text-muted-foreground">
-              Got questions? We've got answers. Here's everything you need to know.
+      {/* Contact Section */}
+      <section id="contact" className="py-16 sm:py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Transform Your Reputation?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get started today and see the difference authentic reviews can make for your business.
             </p>
           </div>
-          
-          <div className="max-w-4xl mx-auto space-y-3 lg:space-y-4">
-            {faqData.map((faq, index) => (
-              <Card key={index} className="cursor-pointer border-2 border-border/50 hover:border-primary/20 hover:shadow-lg transition-all duration-300 rounded-xl lg:rounded-2xl overflow-hidden" onClick={() => toggleFaq(index)}>
-                <CardHeader className="pb-3 p-4 lg:p-6">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-lg sm:text-xl font-semibold text-foreground pr-4">{faq.question}</h4>
-                    <div className="w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      {expandedFaq === index ? <ChevronUp className="w-4 h-4 lg:w-5 lg:h-5 text-primary" /> : <ChevronDown className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />}
-                    </div>
-                  </div>
-                </CardHeader>
-                {expandedFaq === index && (
-                  <CardContent className="pt-0 p-4 lg:p-6 lg:pt-0">
-                    <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">{faq.answer}</p>
-                  </CardContent>
-                )}
-              </Card>
-            ))}
+          <div className="max-w-2xl mx-auto">
+            <EnhancedContactForm />
           </div>
         </div>
       </section>
 
-      {/* Free Trial Form */}
-      <section id="free-trial" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-          <EnhancedContactForm />
-        </div>
-      </section>
-
-      {/* Replace Footer7 with new Footerdemo */}
-      <Footerdemo />
+      {/* Footer */}
+      <FooterSection />
 
       {/* Chat Widget */}
       <ChatWidget />
