@@ -1,17 +1,18 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, ArrowRight, CheckCircle, Users, Award, TrendingUp, Moon, Sun, Menu, X } from "lucide-react";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
-import { RealReviewsCarousel } from "@/components/RealReviewsCarousel";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { RealResultsSection } from "@/components/RealResultsSection";
-import { PricingSection } from "@/components/PricingSection";
-import { EnhancedContactForm } from "@/components/EnhancedContactForm";
-import { ChatWidget } from "@/components/ChatWidget";
-import { AnalyticsDashboard } from "@/components/AnalyticsDashboard";
-import { FooterSection } from "@/components/ui/footer-section";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import RealReviewsCarousel from "@/components/RealReviewsCarousel";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import RealResultsSection from "@/components/RealResultsSection";
+import PricingSection from "@/components/PricingSection";
+import EnhancedContactForm from "@/components/EnhancedContactForm";
+import ChatWidget from "@/components/ChatWidget";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
+import FooterSection from "@/components/ui/footer-section";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
