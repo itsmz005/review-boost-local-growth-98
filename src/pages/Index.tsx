@@ -4,12 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Star, TrendingUp, Users, Award, Shield, Clock, Target, ArrowRight, Play, Pause } from 'lucide-react';
 import TestimonialSlider from '@/components/ui/testimonial-slider';
-import { EnhancedContactForm } from '@/components/EnhancedContactForm';
-import { PricingSection } from '@/components/PricingSection';
-import { AnalyticsDashboard } from '@/components/AnalyticsDashboard';
-import { ChatWidget } from '@/components/ChatWidget';
-import { RealResultsSection } from '@/components/RealResultsSection';
-import Footer from '@/components/ui/footer-7';
+import EnhancedContactForm from '@/components/EnhancedContactForm';
+import PricingSection from '@/components/PricingSection';
+import AnalyticsDashboard from '@/components/AnalyticsDashboard';
+import ChatWidget from '@/components/ChatWidget';
+import RealResultsSection from '@/components/RealResultsSection';
+import { Footer7 } from '@/components/ui/footer-7';
 
 const Index = () => {
   const [isTrialActive, setIsTrialActive] = useState(false);
@@ -249,7 +249,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <Footer7 />
 
       {/* Chat Widget */}
       <ChatWidget />
