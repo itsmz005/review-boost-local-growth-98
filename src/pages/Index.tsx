@@ -120,7 +120,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src={isDarkMode ? "/accreditry-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" : "/accreditry-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png"} 
+                src="/lovable-uploads/ec922bb9-3fa0-4905-b611-5031727c878a.png"
                 alt="Accreditry Logo" 
                 className="h-5 sm:h-6 w-auto" 
               />
