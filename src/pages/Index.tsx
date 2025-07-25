@@ -116,7 +116,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header section */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-5xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
@@ -177,7 +177,7 @@ const Index = () => {
 
       {/* Hero Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
               <div className="space-y-4 lg:space-y-6">
@@ -195,7 +195,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  Stop Losing Customers Today
+                  Claim my free review
                   <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
                 </Button>
                 <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium w-full sm:w-auto">
@@ -203,22 +203,34 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 pt-4">
-                <div className="text-center">
+              <div className="flex justify-center gap-8 lg:gap-12 pt-4">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                    <Building className="w-6 h-6 text-primary" />
+                  </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Businesses Transformed</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Businesses</div>
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">See Growth in Month 1</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Month 1 Growth</div>
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                  </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">184%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Avg Traffic Increase</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Traffic Increase</div>
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Human Support</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Support</div>
                 </div>
               </div>
             </div>
@@ -257,7 +269,7 @@ const Index = () => {
 
       {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -307,7 +319,7 @@ const Index = () => {
 
       {/* Analytics Dashboard Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">See Your Growth in Real-Time</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 lg:mb-8">
@@ -324,7 +336,7 @@ const Index = () => {
 
       {/* Our Promise Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Our Promise: Your Success is Our Obsession</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -389,7 +401,7 @@ const Index = () => {
 
       {/* Client Success Stories - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Real Businesses, Real Transformations</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -596,7 +608,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Frequently Asked Questions</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -628,7 +640,7 @@ const Index = () => {
 
       {/* Free Trial Form */}
       <section id="free-trial" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
           <EnhancedContactForm />
         </div>
       </section>
