@@ -12,7 +12,7 @@ import PricingSection from "@/components/PricingSection";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
 import ChatWidget from "@/components/ChatWidget";
 import AnalyticsDashboard from "@/components/AnalyticsDashboard";
-import FooterSection from "@/components/ui/footer-section";
+import { Footerdemo } from "@/components/ui/footer-section";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
@@ -346,7 +346,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <FooterSection />
+      <Footerdemo />
 
       {/* Chat Widget */}
       <ChatWidget />
