@@ -9,8 +9,8 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Pricing } from "@/components/ui/pricing";
 import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
-import RealReviewsCarousel from "@/components/RealReviewsCarousel";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import { Footerdemo } from "@/components/ui/footer-section";
 
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -96,7 +96,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Professional Header */}
+      {/* Header section */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
@@ -235,7 +235,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section - More Emotional */}
+      {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 lg:mb-16">
@@ -301,9 +301,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Real Reviews Carousel */}
-      <RealReviewsCarousel />
 
       {/* Our Promise Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
@@ -616,56 +613,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer7 
-        logo={{
-          url: "#",
-          src: "/lovable-uploads/6af8b769-c93d-41dc-b4c2-3f074d0db8bf.png",
-          alt: "Accreditry Logo",
-          title: ""
-        }} 
-        sections={[
-          {
-            title: "Services",
-            links: [
-              { name: "Review Management", href: "#services" },
-              { name: "Analytics", href: "#analytics" },
-              { name: "Pricing", href: "#pricing" },
-              { name: "Free Trial", href: "#free-trial" }
-            ]
-          },
-          {
-            title: "Company",
-            links: [
-              { name: "About Us", href: "#" },
-              { name: "How It Works", href: "#services" },
-              { name: "Success Stories", href: "#" },
-              { name: "Contact", href: "#" }
-            ]
-          },
-          {
-            title: "Support",
-            links: [
-              { name: "Help Center", href: "#" },
-              { name: "FAQ", href: "#faq" },
-              { name: "Contact Support", href: "tel:+13107361406" },
-              { name: "Live Chat", href: "#" }
-            ]
-          }
-        ]} 
-        description="Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results." 
-        socialLinks={[
-          { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-          { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-          { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-          { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" }
-        ]} 
-        copyright="© 2025 Accreditry. All rights reserved. Executed by Webtic Studio" 
-        legalLinks={[
-          { name: "Terms of Service", href: "#" },
-          { name: "Privacy Policy", href: "#" }
-        ]} 
-      />
+      {/* Replace Footer7 with new Footerdemo */}
+      <Footerdemo />
 
       {/* Chat Widget */}
       <ChatWidget />
