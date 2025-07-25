@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -98,10 +99,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header section */}
       <header className="bg-background/95 backdrop-blur-sm border-b-2 border-border/20 sticky top-0 z-40 shadow-sm">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 max-w-7xl">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <img src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-5 sm:h-6 w-auto" />
+              <picture>
+                <source media="(prefers-color-scheme: dark)" srcSet="/lovable-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" />
+                <img src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-5 sm:h-6 w-auto" />
+              </picture>
             </div>
             
             {/* Desktop Navigation */}
@@ -134,7 +138,7 @@ const Index = () => {
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
             <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border/20 shadow-lg">
-              <nav className="container mx-auto px-4 py-4 space-y-4">
+              <nav className="container mx-auto px-4 py-4 space-y-4 max-w-7xl">
                 <button onClick={() => scrollToSection('services')} className="block w-full text-left text-foreground/80 hover:text-primary transition-colors text-lg font-medium py-2">
                   How it works
                 </button>
@@ -155,7 +159,7 @@ const Index = () => {
 
       {/* Hero Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
               <div className="space-y-4 lg:space-y-6">
@@ -167,9 +171,7 @@ const Index = () => {
                   <span className="text-primary"> Better-Reviewed Competitors</span>
                 </h2>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Every day you wait, potential customers choose your competitors based on their reviews. 
-                  Our automated review system helps honest businesses like yours get the recognition you deserve - 
-                  from real local customers, not bots.
+                  Our automated review system helps honest businesses like yours get the recognition you deserve - from real local customers, not bots.
                 </p>
               </div>
               
@@ -237,7 +239,7 @@ const Index = () => {
 
       {/* Services Section */}
       <section id="services" className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Why Businesses Choose Us Over Everyone Else</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -287,7 +289,7 @@ const Index = () => {
 
       {/* Analytics Dashboard Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">See Your Growth in Real-Time</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 lg:mb-8">
@@ -304,7 +306,7 @@ const Index = () => {
 
       {/* Our Promise Section - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Our Promise: Your Success is Our Obsession</h3>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -369,7 +371,7 @@ const Index = () => {
 
       {/* Client Success Stories - More Emotional */}
       <section className="py-12 sm:py-16 lg:py-20 bg-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Real Businesses, Real Transformations</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -576,7 +578,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section id="faq" className="py-12 sm:py-16 lg:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-12 lg:mb-16">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6 text-foreground">Frequently Asked Questions</h3>
             <p className="text-lg sm:text-xl text-muted-foreground">
@@ -608,7 +610,7 @@ const Index = () => {
 
       {/* Free Trial Form */}
       <section id="free-trial" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <EnhancedContactForm />
         </div>
       </section>
