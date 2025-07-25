@@ -15,7 +15,7 @@ import { Footerdemo } from "@/components/ui/footer-section";
 const Index = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Sync with system theme and footer theme changes
   useEffect(() => {
@@ -120,7 +120,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <img 
-                src={isDarkMode ? "/lovable-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" : "/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png"} 
+                src={isDarkMode ? "/accreditry-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" : "/accreditry-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png"} 
                 alt="Accreditry Logo" 
                 className="h-5 sm:h-6 w-auto" 
               />
@@ -176,7 +176,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-background via-muted/20 to-background">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background via-muted/20 to-background">
         <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-10 lg:space-y-12 order-2 lg:order-1">
@@ -195,7 +195,7 @@ const Index = () => {
               
               <div className="flex flex-col gap-4 sm:gap-5">
                 <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  Start Free Trial
+                  Claim my Free Review
                   <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
                 <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-medium w-full sm:w-auto">
@@ -439,7 +439,7 @@ const Index = () => {
                   <CardContent className="p-0">
                     <div className="relative">
                       <img 
-                        src="/lovable-uploads/930ccfef-099d-4707-8d41-382eb0766f15.png"
+                        src="/accreditry-uploads/930ccfef-099d-4707-8d41-382eb0766f15.png"
                         alt="Modern elevator installation in residential building"
                         className="w-full h-[250px] sm:h-[300px] lg:h-[400px] object-cover"
                       />
