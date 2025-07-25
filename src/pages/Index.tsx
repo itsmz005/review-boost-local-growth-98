@@ -175,31 +175,31 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section - Smaller and More Spacious */}
+      {/* Hero Section */}
       <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-background via-muted/20 to-background">
         <div className="container mx-auto px-6 sm:px-8 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-10 lg:space-y-12 order-2 lg:order-1">
               <div className="space-y-6 lg:space-y-8">
                 <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium w-fit">
-                  Trusted by over 500 businesses who've seen a significant increase in traffic
+                  Trusted by over 500 businesses
                 </Badge>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-                  Stop Losing Customers to 
-                  <span className="text-primary"> Better-Reviewed Competitors</span>
+                  Boost your business through 
+                  <span className="text-primary"> authentic reviews</span>
                 </h2>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                  Our automated review system helps honest businesses like yours get the recognition you deserve - from real local customers, not bots.
+                  Transform your online reputation with genuine reviews from real local Americans. No fake accounts, no bots - just authentic voices that drive real results and sustainable growth.
                 </p>
               </div>
               
               <div className="flex flex-col gap-4 sm:gap-5">
                 <Button onClick={scrollToTrial} size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto">
-                  Claim my free review
+                  Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
                 <Button variant="outline" size="lg" onClick={() => scrollToSection('testimonials')} className="border-2 border-primary/20 hover:bg-primary/5 rounded-xl px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl font-medium w-full sm:w-auto">
-                  See Real Success Stories
+                  View Success Stories
                 </Button>
               </div>
 
@@ -209,21 +209,21 @@ const Index = () => {
                     <Building className="w-6 h-6 text-primary" />
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Businesses</div>
+                  <div className="text-sm text-muted-foreground">Happy Clients</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
                     <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
                   <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-muted-foreground">Month 1 Growth</div>
+                  <div className="text-sm text-muted-foreground">Success Rate</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                    <BarChart3 className="w-6 h-6 text-primary" />
+                    <Star className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-primary">184%</div>
-                  <div className="text-sm text-muted-foreground">Traffic Increase</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">4.9★</div>
+                  <div className="text-sm text-muted-foreground">Client Rating</div>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
