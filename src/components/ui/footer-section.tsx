@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -33,8 +32,8 @@ function Footerdemo() {
           <div className="relative">
             <div className="mb-4">
               <picture>
-                <source media="(prefers-color-scheme: dark)" srcSet="/lovable-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" />
-                <img src="/lovable-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-8 w-auto" />
+                <source media="(prefers-color-scheme: dark)" srcSet="/app-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" />
+                <img src="/app-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-8 w-auto" />
               </picture>
             </div>
             <p className="mb-6 text-muted-foreground">
