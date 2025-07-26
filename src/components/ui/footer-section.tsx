@@ -32,8 +32,8 @@ function Footerdemo() {
           <div className="relative">
             <div className="mb-4">
               <picture>
-                <source media="(prefers-color-scheme: dark)" srcSet="/app-uploads/e23f5dcd-bea4-4baf-8946-20bbd7e92d9f.png" />
-                <img src="/app-uploads/b595e9d1-ad26-41b3-9049-1809a2e14233.png" alt="Accreditry Logo" className="h-8 w-auto" />
+                <source media="(prefers-color-scheme: dark)" srcSet="https://media.discordapp.net/attachments/996663635860525057/1398332562811785286/Accreditry-W.png?ex=6885a2ee&is=6884516e&hm=7121f681a2d189a6f687bcce9545089bbec116bc4cb61bf40bb622883ab5ed9c&=&format=webp&quality=lossless&width=1938&height=432" />
+                <img src="https://media.discordapp.net/attachments/996663635860525057/1398332562530893845/Accreditry.png?ex=6885a2ee&is=6884516e&hm=cd0ef0dab9cf6865090b54b80e269d62412adc708d43e83b1571cd7739084157&=&format=webp&quality=lossless&width=1938&height=432" alt="Accreditry Logo" className="h-8 w-auto" />
               </picture>
             </div>
             <p className="mb-6 text-muted-foreground">
